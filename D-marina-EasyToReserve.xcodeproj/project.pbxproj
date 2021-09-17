@@ -1,0 +1,854 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B14C12B526F4EBE500CFE930 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12B426F4EBE500CFE930 /* AppDelegate.swift */; };
+		B14C12B926F4EBE500CFE930 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = B14C12B726F4EBE500CFE930 /* Main.html */; };
+		B14C12BB26F4EBE500CFE930 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B14C12BA26F4EBE500CFE930 /* Icon.png */; };
+		B14C12BD26F4EBE500CFE930 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = B14C12BC26F4EBE500CFE930 /* Style.css */; };
+		B14C12BF26F4EBE500CFE930 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C12BE26F4EBE500CFE930 /* Script.js */; };
+		B14C12C126F4EBE500CFE930 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12C026F4EBE500CFE930 /* ViewController.swift */; };
+		B14C12C426F4EBE500CFE930 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14C12C226F4EBE500CFE930 /* Main.storyboard */; };
+		B14C12C626F4EBEA00CFE930 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B14C12C526F4EBEA00CFE930 /* Assets.xcassets */; };
+		B14C12D226F4EBEB00CFE930 /* D_marina_EasyToReserveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12D126F4EBEB00CFE930 /* D_marina_EasyToReserveTests.swift */; };
+		B14C12DC26F4EBEB00CFE930 /* D_marina_EasyToReserveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12DB26F4EBEB00CFE930 /* D_marina_EasyToReserveUITests.swift */; };
+		B14C12DE26F4EBEB00CFE930 /* D_marina_EasyToReserveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12DD26F4EBEB00CFE930 /* D_marina_EasyToReserveUITestsLaunchTests.swift */; };
+		B14C12E426F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B14C12E326F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B14C12E926F4EBEB00CFE930 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */; };
+		B14C12EB26F4EBEB00CFE930 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12EA26F4EBEB00CFE930 /* SafariExtensionViewController.swift */; };
+		B14C12EE26F4EBEB00CFE930 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C12ED26F4EBEB00CFE930 /* script.js */; };
+		B14C12F026F4EBEB00CFE930 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B14C12EF26F4EBEB00CFE930 /* ToolbarItemIcon.pdf */; };
+		B14C12F326F4EBEB00CFE930 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14C12F126F4EBEB00CFE930 /* SafariExtensionViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B14C12CE26F4EBEB00CFE930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B14C12A926F4EBE500CFE930 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B14C12B026F4EBE500CFE930;
+			remoteInfo = "D-marina-EasyToReserve";
+		};
+		B14C12D826F4EBEB00CFE930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B14C12A926F4EBE500CFE930 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B14C12B026F4EBE500CFE930;
+			remoteInfo = "D-marina-EasyToReserve";
+		};
+		B14C12E526F4EBEB00CFE930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B14C12A926F4EBE500CFE930 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B14C12E226F4EBEB00CFE930;
+			remoteInfo = "D-marina-EasyToReserve Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B14C12FB26F4EBEB00CFE930 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B14C12E426F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B14C12B126F4EBE500CFE930 /* D-marina-EasyToReserve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D-marina-EasyToReserve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14C12B426F4EBE500CFE930 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B14C12B826F4EBE500CFE930 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		B14C12BA26F4EBE500CFE930 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B14C12BC26F4EBE500CFE930 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		B14C12BE26F4EBE500CFE930 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		B14C12C026F4EBE500CFE930 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B14C12C326F4EBE500CFE930 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B14C12C526F4EBEA00CFE930 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B14C12C726F4EBEA00CFE930 /* D_marina_EasyToReserve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = D_marina_EasyToReserve.entitlements; sourceTree = "<group>"; };
+		B14C12C826F4EBEA00CFE930 /* D-marina-EasyToReserve.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "D-marina-EasyToReserve.entitlements"; sourceTree = "<group>"; };
+		B14C12CD26F4EBEB00CFE930 /* D-marina-EasyToReserveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D-marina-EasyToReserveTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14C12D126F4EBEB00CFE930 /* D_marina_EasyToReserveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_marina_EasyToReserveTests.swift; sourceTree = "<group>"; };
+		B14C12D726F4EBEB00CFE930 /* D-marina-EasyToReserveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D-marina-EasyToReserveUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14C12DB26F4EBEB00CFE930 /* D_marina_EasyToReserveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_marina_EasyToReserveUITests.swift; sourceTree = "<group>"; };
+		B14C12DD26F4EBEB00CFE930 /* D_marina_EasyToReserveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_marina_EasyToReserveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B14C12E326F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "D-marina-EasyToReserve Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		B14C12EA26F4EBEB00CFE930 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		B14C12ED26F4EBEB00CFE930 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		B14C12EF26F4EBEB00CFE930 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		B14C12F226F4EBEB00CFE930 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		B14C12F426F4EBEB00CFE930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B14C12F526F4EBEB00CFE930 /* D_marina_EasyToReserve_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = D_marina_EasyToReserve_Extension.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B14C12AE26F4EBE500CFE930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12CA26F4EBEB00CFE930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12D426F4EBEB00CFE930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12E026F4EBEB00CFE930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B14C12A826F4EBE500CFE930 = {
+			isa = PBXGroup;
+			children = (
+				B14C12B326F4EBE500CFE930 /* D-marina-EasyToReserve */,
+				B14C12D026F4EBEB00CFE930 /* D-marina-EasyToReserveTests */,
+				B14C12DA26F4EBEB00CFE930 /* D-marina-EasyToReserveUITests */,
+				B14C12E726F4EBEB00CFE930 /* D-marina-EasyToReserve Extension */,
+				B14C12B226F4EBE500CFE930 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B14C12B226F4EBE500CFE930 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B14C12B126F4EBE500CFE930 /* D-marina-EasyToReserve.app */,
+				B14C12CD26F4EBEB00CFE930 /* D-marina-EasyToReserveTests.xctest */,
+				B14C12D726F4EBEB00CFE930 /* D-marina-EasyToReserveUITests.xctest */,
+				B14C12E326F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B14C12B326F4EBE500CFE930 /* D-marina-EasyToReserve */ = {
+			isa = PBXGroup;
+			children = (
+				B14C12B426F4EBE500CFE930 /* AppDelegate.swift */,
+				B14C12C026F4EBE500CFE930 /* ViewController.swift */,
+				B14C12C226F4EBE500CFE930 /* Main.storyboard */,
+				B14C12C526F4EBEA00CFE930 /* Assets.xcassets */,
+				B14C12C726F4EBEA00CFE930 /* D_marina_EasyToReserve.entitlements */,
+				B14C12C826F4EBEA00CFE930 /* D-marina-EasyToReserve.entitlements */,
+				B14C12B626F4EBE500CFE930 /* Resources */,
+			);
+			path = "D-marina-EasyToReserve";
+			sourceTree = "<group>";
+		};
+		B14C12B626F4EBE500CFE930 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B14C12B726F4EBE500CFE930 /* Main.html */,
+				B14C12BA26F4EBE500CFE930 /* Icon.png */,
+				B14C12BC26F4EBE500CFE930 /* Style.css */,
+				B14C12BE26F4EBE500CFE930 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B14C12D026F4EBEB00CFE930 /* D-marina-EasyToReserveTests */ = {
+			isa = PBXGroup;
+			children = (
+				B14C12D126F4EBEB00CFE930 /* D_marina_EasyToReserveTests.swift */,
+			);
+			path = "D-marina-EasyToReserveTests";
+			sourceTree = "<group>";
+		};
+		B14C12DA26F4EBEB00CFE930 /* D-marina-EasyToReserveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B14C12DB26F4EBEB00CFE930 /* D_marina_EasyToReserveUITests.swift */,
+				B14C12DD26F4EBEB00CFE930 /* D_marina_EasyToReserveUITestsLaunchTests.swift */,
+			);
+			path = "D-marina-EasyToReserveUITests";
+			sourceTree = "<group>";
+		};
+		B14C12E726F4EBEB00CFE930 /* D-marina-EasyToReserve Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */,
+				B14C12EA26F4EBEB00CFE930 /* SafariExtensionViewController.swift */,
+				B14C12F126F4EBEB00CFE930 /* SafariExtensionViewController.xib */,
+				B14C12F426F4EBEB00CFE930 /* Info.plist */,
+				B14C12F526F4EBEB00CFE930 /* D_marina_EasyToReserve_Extension.entitlements */,
+				B14C12EC26F4EBEB00CFE930 /* Resources */,
+			);
+			path = "D-marina-EasyToReserve Extension";
+			sourceTree = "<group>";
+		};
+		B14C12EC26F4EBEB00CFE930 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B14C12ED26F4EBEB00CFE930 /* script.js */,
+				B14C12EF26F4EBEB00CFE930 /* ToolbarItemIcon.pdf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B14C12B026F4EBE500CFE930 /* D-marina-EasyToReserve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B14C12FC26F4EBEB00CFE930 /* Build configuration list for PBXNativeTarget "D-marina-EasyToReserve" */;
+			buildPhases = (
+				B14C12AD26F4EBE500CFE930 /* Sources */,
+				B14C12AE26F4EBE500CFE930 /* Frameworks */,
+				B14C12AF26F4EBE500CFE930 /* Resources */,
+				B14C12FB26F4EBEB00CFE930 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B14C12E626F4EBEB00CFE930 /* PBXTargetDependency */,
+			);
+			name = "D-marina-EasyToReserve";
+			productName = "D-marina-EasyToReserve";
+			productReference = B14C12B126F4EBE500CFE930 /* D-marina-EasyToReserve.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B14C12CC26F4EBEB00CFE930 /* D-marina-EasyToReserveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B14C12FF26F4EBEB00CFE930 /* Build configuration list for PBXNativeTarget "D-marina-EasyToReserveTests" */;
+			buildPhases = (
+				B14C12C926F4EBEB00CFE930 /* Sources */,
+				B14C12CA26F4EBEB00CFE930 /* Frameworks */,
+				B14C12CB26F4EBEB00CFE930 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B14C12CF26F4EBEB00CFE930 /* PBXTargetDependency */,
+			);
+			name = "D-marina-EasyToReserveTests";
+			productName = "D-marina-EasyToReserveTests";
+			productReference = B14C12CD26F4EBEB00CFE930 /* D-marina-EasyToReserveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B14C12D626F4EBEB00CFE930 /* D-marina-EasyToReserveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B14C130226F4EBEB00CFE930 /* Build configuration list for PBXNativeTarget "D-marina-EasyToReserveUITests" */;
+			buildPhases = (
+				B14C12D326F4EBEB00CFE930 /* Sources */,
+				B14C12D426F4EBEB00CFE930 /* Frameworks */,
+				B14C12D526F4EBEB00CFE930 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B14C12D926F4EBEB00CFE930 /* PBXTargetDependency */,
+			);
+			name = "D-marina-EasyToReserveUITests";
+			productName = "D-marina-EasyToReserveUITests";
+			productReference = B14C12D726F4EBEB00CFE930 /* D-marina-EasyToReserveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B14C12E226F4EBEB00CFE930 /* D-marina-EasyToReserve Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B14C12F826F4EBEB00CFE930 /* Build configuration list for PBXNativeTarget "D-marina-EasyToReserve Extension" */;
+			buildPhases = (
+				B14C12DF26F4EBEB00CFE930 /* Sources */,
+				B14C12E026F4EBEB00CFE930 /* Frameworks */,
+				B14C12E126F4EBEB00CFE930 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "D-marina-EasyToReserve Extension";
+			productName = "D-marina-EasyToReserve Extension";
+			productReference = B14C12E326F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B14C12A926F4EBE500CFE930 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					B14C12B026F4EBE500CFE930 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					B14C12CC26F4EBEB00CFE930 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = B14C12B026F4EBE500CFE930;
+					};
+					B14C12D626F4EBEB00CFE930 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = B14C12B026F4EBE500CFE930;
+					};
+					B14C12E226F4EBEB00CFE930 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = B14C12AC26F4EBE500CFE930 /* Build configuration list for PBXProject "D-marina-EasyToReserve" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B14C12A826F4EBE500CFE930;
+			productRefGroup = B14C12B226F4EBE500CFE930 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B14C12B026F4EBE500CFE930 /* D-marina-EasyToReserve */,
+				B14C12CC26F4EBEB00CFE930 /* D-marina-EasyToReserveTests */,
+				B14C12D626F4EBEB00CFE930 /* D-marina-EasyToReserveUITests */,
+				B14C12E226F4EBEB00CFE930 /* D-marina-EasyToReserve Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B14C12AF26F4EBE500CFE930 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B14C12BB26F4EBE500CFE930 /* Icon.png in Resources */,
+				B14C12C426F4EBE500CFE930 /* Main.storyboard in Resources */,
+				B14C12BF26F4EBE500CFE930 /* Script.js in Resources */,
+				B14C12B926F4EBE500CFE930 /* Main.html in Resources */,
+				B14C12C626F4EBEA00CFE930 /* Assets.xcassets in Resources */,
+				B14C12BD26F4EBE500CFE930 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12CB26F4EBEB00CFE930 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12D526F4EBEB00CFE930 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12E126F4EBEB00CFE930 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B14C12F326F4EBEB00CFE930 /* SafariExtensionViewController.xib in Resources */,
+				B14C12F026F4EBEB00CFE930 /* ToolbarItemIcon.pdf in Resources */,
+				B14C12EE26F4EBEB00CFE930 /* script.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B14C12AD26F4EBE500CFE930 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B14C12C126F4EBE500CFE930 /* ViewController.swift in Sources */,
+				B14C12B526F4EBE500CFE930 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12C926F4EBEB00CFE930 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B14C12D226F4EBEB00CFE930 /* D_marina_EasyToReserveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12D326F4EBEB00CFE930 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B14C12DC26F4EBEB00CFE930 /* D_marina_EasyToReserveUITests.swift in Sources */,
+				B14C12DE26F4EBEB00CFE930 /* D_marina_EasyToReserveUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B14C12DF26F4EBEB00CFE930 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B14C12EB26F4EBEB00CFE930 /* SafariExtensionViewController.swift in Sources */,
+				B14C12E926F4EBEB00CFE930 /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B14C12CF26F4EBEB00CFE930 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B14C12B026F4EBE500CFE930 /* D-marina-EasyToReserve */;
+			targetProxy = B14C12CE26F4EBEB00CFE930 /* PBXContainerItemProxy */;
+		};
+		B14C12D926F4EBEB00CFE930 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B14C12B026F4EBE500CFE930 /* D-marina-EasyToReserve */;
+			targetProxy = B14C12D826F4EBEB00CFE930 /* PBXContainerItemProxy */;
+		};
+		B14C12E626F4EBEB00CFE930 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B14C12E226F4EBEB00CFE930 /* D-marina-EasyToReserve Extension */;
+			targetProxy = B14C12E526F4EBEB00CFE930 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B14C12B726F4EBE500CFE930 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B14C12B826F4EBE500CFE930 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		B14C12C226F4EBE500CFE930 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B14C12C326F4EBE500CFE930 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B14C12F126F4EBEB00CFE930 /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B14C12F226F4EBEB00CFE930 /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B14C12F626F4EBEB00CFE930 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B14C12F726F4EBEB00CFE930 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		B14C12F926F4EBEB00CFE930 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "D-marina-EasyToReserve Extension/D_marina_EasyToReserve_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B14C12FA26F4EBEB00CFE930 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "D-marina-EasyToReserve Extension/D_marina_EasyToReserve_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B14C12FD26F4EBEB00CFE930 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "D-marina-EasyToReserve/D-marina-EasyToReserve.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B14C12FE26F4EBEB00CFE930 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "D-marina-EasyToReserve/D-marina-EasyToReserve.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B14C130026F4EBEB00CFE930 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserveTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/D-marina-EasyToReserve.app/Contents/MacOS/D-marina-EasyToReserve";
+			};
+			name = Debug;
+		};
+		B14C130126F4EBEB00CFE930 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserveTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/D-marina-EasyToReserve.app/Contents/MacOS/D-marina-EasyToReserve";
+			};
+			name = Release;
+		};
+		B14C130326F4EBEB00CFE930 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserveUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "D-marina-EasyToReserve";
+			};
+			name = Debug;
+		};
+		B14C130426F4EBEB00CFE930 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserveUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "D-marina-EasyToReserve";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B14C12AC26F4EBE500CFE930 /* Build configuration list for PBXProject "D-marina-EasyToReserve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B14C12F626F4EBEB00CFE930 /* Debug */,
+				B14C12F726F4EBEB00CFE930 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B14C12F826F4EBEB00CFE930 /* Build configuration list for PBXNativeTarget "D-marina-EasyToReserve Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B14C12F926F4EBEB00CFE930 /* Debug */,
+				B14C12FA26F4EBEB00CFE930 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B14C12FC26F4EBEB00CFE930 /* Build configuration list for PBXNativeTarget "D-marina-EasyToReserve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B14C12FD26F4EBEB00CFE930 /* Debug */,
+				B14C12FE26F4EBEB00CFE930 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B14C12FF26F4EBEB00CFE930 /* Build configuration list for PBXNativeTarget "D-marina-EasyToReserveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B14C130026F4EBEB00CFE930 /* Debug */,
+				B14C130126F4EBEB00CFE930 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B14C130226F4EBEB00CFE930 /* Build configuration list for PBXNativeTarget "D-marina-EasyToReserveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B14C130326F4EBEB00CFE930 /* Debug */,
+				B14C130426F4EBEB00CFE930 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B14C12A926F4EBE500CFE930 /* Project object */;
+}
