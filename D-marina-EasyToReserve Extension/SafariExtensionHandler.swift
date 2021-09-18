@@ -17,8 +17,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
 
     override func toolbarItemClicked(in window: SFSafariWindow) {
-        // This method will be called when your toolbar item is clicked.
-        NSLog("The extension's toolbar item was clicked")
+
+        requestAvailabilityOfAllReservations(in: window)
     }
     
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
@@ -30,4 +30,18 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         return SafariExtensionViewController.shared
     }
 
+}
+
+extension SafariExtensionHandler {
+    
+    func requestAvailabilityOfAllReservations(in window: SFSafariWindow) {
+        
+        window.getActiveTab { tab in
+            
+            tab?.getActivePage { page in
+                
+                page?.dispatchMessageToScript(withName: "request-availability-of-all-reservations", userInfo: nil)
+            }
+        }
+    }
 }
