@@ -1,0 +1,58 @@
+div.canvas {
+    
+}
+
+div.canvas div.boat {
+    
+}
+
+div.canvas div.course {
+    
+}
+
+div.canvas div.states {
+    
+}
+
+div.canvas div.state {
+    
+}
+
+div.canvas span.label {
+    
+}
+
+div.canvas span.label:after {
+    
+    content: ':';
+    
+    margin-left: 4pt;
+    margin-right: 10pt;
+}
+
+div.canvas span.value {
+    
+}
+
+div.canvas span.date {
+    
+}
+
+div.canvas span.availability {
+    
+}
+
+div.canvas span.availability-skip {
+    
+    color: #c8c2be;
+}
+
+div.canvas span.availability-valid {
+    
+    color: #1e50a2;
+}
+
+div.canvas span.availability-invalid {
+    
+    color: #c9171e;
+}

@@ -4,6 +4,17 @@
 <dict>
 	<key>NSExtension</key>
 	<dict>
+		<key>SFSafariStyleSheet</key>
+		<array>
+			<dict>
+				<key>Style Sheet</key>
+				<string>styles.css</string>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+			</dict>
+		</array>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.Safari.extension</string>
 		<key>NSExtensionPrincipalClass</key>
@@ -20,6 +31,14 @@
 			</dict>
 			<dict>
 				<key>Script</key>
+				<string>Canvas.js</string>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+			</dict>
+			<dict>
+				<key>Script</key>
 				<string>Plan.js</string>
 				<key>Allowed URL Patterns</key>
 				<array>
@@ -29,6 +48,14 @@
 			<dict>
 				<key>Script</key>
 				<string>Endpoint.js</string>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+			</dict>
+			<dict>
+				<key>Script</key>
+				<string>Response.js</string>
 				<key>Allowed URL Patterns</key>
 				<array>
 					<string>https://d-marina.resv.jp/reserve/calendar.php</string>

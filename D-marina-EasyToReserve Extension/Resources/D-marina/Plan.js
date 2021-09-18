@@ -1,17 +1,10 @@
 class State {
 
-    constructor(date, availability) {
+    constructor(date, availability, availabilityKind) {
 
         this.date = date;
         this.availability = availability;
-    }
-
-    getDate() {
-        return this.date;
-    }
-
-    getAvailability() {
-        return this.availability;
+        this.availabilityKind = availabilityKind;
     }
 }
 
@@ -22,18 +15,6 @@ class Plan {
         this.boat = boat;
         this.course = course;
         this.states = states;
-    }
-
-    getBoat() {
-        return this.boat;
-    }
-
-    getCourse() {
-        return this.course;
-    }
-
-    getStates() {
-        return this.states;
     }
 
     appendState(state) {
