@@ -58,7 +58,7 @@ class Page {
         
         return boats;
     }
-
+    
     get courses() {
         
         const courses = new Array();

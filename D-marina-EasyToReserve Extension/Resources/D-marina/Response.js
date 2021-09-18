@@ -36,17 +36,6 @@ class Response {
             
             plan.appendState(state);
         }
-
-//        for (let offset = 0; offset != 7; ++offset) {
-//
-//            const dateNode = dateNodes[offset + 1];
-//            const availabilityNode = availabilityNodes[offset];
-//
-//            const date = dateNode.innerText;
-//            const availability = representedVailabilityAsText[availabilityNode.className];
-//
-//            plan.appendState(new State(date, availability));
-//        }
         
         return plan;
     }

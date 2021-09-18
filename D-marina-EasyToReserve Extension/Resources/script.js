@@ -35,7 +35,7 @@ function receiveRequestAvailabilityOfAllReservationsMessage() {
     
     removeCanvas();
     
-    const canvas = new Canvas();
+    const canvas = new Canvas(page);
 
     for (const course of page.courses) {
 
@@ -45,7 +45,7 @@ function receiveRequestAvailabilityOfAllReservationsMessage() {
 
             requestPlan(selectedDate, boat, course, (response) => {
                 
-                canvas.appendPlanCanvas(new PlanCanvas(response));
+                canvas.appendPlanCanvas(new PlanCanvas(canvas, response));
             });
         }
     }

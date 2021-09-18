@@ -1,15 +1,19 @@
 class Canvas {
 
-    constructor() {
+    constructor(page) {
 
         Canvas.makeId = (id) => { return `easytoreserve-${id}` };
         Canvas.makeCourseId = (course) => { return Canvas.makeId(`course-${course.id}`) };
         
         Canvas.id = Canvas.makeId('canvas');
+        Canvas.boatIdAttributeName = 'x-boat-id';
+        Canvas.boatOrderAttributeName = 'x-boat-order';
+        Canvas.courseIdAttributeName = 'x-course-id';
 
         const maker = new NodeMaker('div', 'canvas', Canvas.id);
         const node = maker.node;
-                
+
+        this.page = page;
         this.node = node;
 
         const bodyNode = document.body;
@@ -23,26 +27,66 @@ class Canvas {
         const maker = new NodeMaker('h1', 'course');
         const sectionMaker = new NodeMaker('section', 'course', Canvas.makeCourseId(course));
         
+        maker.setAttribute(Canvas.courseIdAttributeName, course.id);
         maker.appendText(`コース : ${course.label}`);
         
         this.node.appendChild(maker.node);
         this.node.appendChild(sectionMaker.node);
     }
     
+    get courseSectionNodes() {
+        
+        let sectionNodes = new Array();
+        
+        for (const node of this.node.childNodes) {
+
+            if (node.tagName.toLowerCase() === 'section') {
+                
+                sectionNodes.push(node);
+            }
+        }
+        
+        return sectionNodes;
+    }
+    
+    boatOrderFor(boat) {
+        
+        const page = this.page;
+        const boatOrders = page.boats.map(boat => {
+            
+            return boat.name;
+        });
+        
+        return boatOrders.indexOf(boat.name);
+    }
+
     courseSectionNodeBy(course) {
         
         const id = Canvas.makeCourseId(course);
         
-        for (const node of this.node.childNodes) {
+        for (const node of this.courseSectionNodes) {
 
-            if (node.tagName.toLowerCase() !== 'section') {
-                
-                continue;
-            }
-            
             if (node.id === id) {
                 
                 return node;
+            }
+        }
+        
+        return null;
+    }
+    
+    courseSectionNodeAfterSpecifiedCourse(course, boat) {
+        
+        const sectionNode = this.courseSectionNodeBy(course);
+        const specifiedBoatOrder = this.boatOrderFor(boat);
+        
+        for (const existingNode of sectionNode.childNodes) {
+
+            const existingBoatOrder = parseInt(existingNode.getAttribute(Canvas.boatOrderAttributeName));
+
+            if (specifiedBoatOrder < existingBoatOrder) {
+                
+                return existingNode;
             }
         }
         
@@ -57,21 +101,34 @@ class Canvas {
         maker.appendNode(planCanvas.node);
  
         const node = maker.node;
-        const sectionNode = this.courseSectionNodeBy(planCanvas.course);
-
+        const boat = planCanvas.boat;
+        const course = planCanvas.course;
+        const sectionNode = this.courseSectionNodeBy(course);
+        const afterSectioNode = this.courseSectionNodeAfterSpecifiedCourse(course, boat);
+                                      
         if (sectionNode.children.length == 0) {
         
             sectionNode.appendChild(planCanvas.dateStackNode);
         }
         
-        sectionNode.appendChild(planCanvas.planStackNode);
+        const planStackNode = planCanvas.planStackNode;
+        
+        if (afterSectioNode) {
+            
+            sectionNode.insertBefore(planStackNode, afterSectioNode);
+        }
+        else {
+            
+            sectionNode.appendChild(planStackNode);
+        }
     }
 }
 
 class PlanCanvas {
     
-    constructor(response) {
+    constructor(canvas, response) {
         
+        this.canvas = canvas;
         this.boat = response.boat;
         this.course = response.course;
         this.plan = response.plan;
@@ -109,13 +166,19 @@ class PlanCanvas {
         
         const maker = new NodeMaker('div', ['canvas-stack', 'canvas-plan-stack']);
         
-        maker.appendText(this.boat.name, 'div', 'boat');
+        const boat = this.boat;
+        const boatId = boat.id;
+        const boatOrder = this.canvas.boatOrderFor(boat);
         
+        maker.setAttribute(Canvas.boatIdAttributeName, boatId);
+        maker.setAttribute(Canvas.boatOrderAttributeName, boatOrder);
+        maker.appendText(boat.name, 'div', 'boat');
+
         for (const state of this.plan.states) {
             
             maker.appendText(state.availability, 'div', ['availability', state.availabilityKind]);
         }
-        
+
         return maker.node;
     }
     
@@ -178,6 +241,7 @@ class NodeMaker {
         
         this.root = document.createElement(tagName);
         this.applyClassNamesTo(this.root, classNames);
+        this.attributes = {};
         
         if (id) {
             
@@ -232,5 +296,10 @@ class NodeMaker {
             
             this.appendNode(textNode);
         }
+    }
+    
+    setAttribute(name, value) {
+        
+        this.root.setAttribute(name, value);
     }
 }
