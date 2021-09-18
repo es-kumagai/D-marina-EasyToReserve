@@ -128,6 +128,8 @@ class PlanCanvas {
     
     constructor(canvas, response) {
         
+        PlanCanvas.closingDayOfWeek = 'tuesday';
+        
         this.canvas = canvas;
         this.boat = response.boat;
         this.course = response.course;
@@ -148,6 +150,28 @@ class PlanCanvas {
         return maker.node;
     }
     
+    dayOfWeekForDate(date) {
+        
+        const dayOfWeek = date.slice(-3);
+        const dayOfWeekTable = {
+         
+            '(日)' : 'sunday',
+            '(月)' : 'monday',
+            '(火)' : 'tuesday',
+            '(水)' : 'wednesday',
+            '(木)' : 'thursday',
+            '(金)' : 'friday',
+            '(土)' : 'saturday',
+        };
+
+        return dayOfWeekTable[dayOfWeek];
+    }
+    
+    isClosingDayOfWeek(dayOfWeek) {
+        
+        return dayOfWeek === PlanCanvas.closingDayOfWeek;
+    }
+    
     get dateStackNode() {
         
         const maker = new NodeMaker('div', ['canvas-stack', 'canvas-date-stack']);
@@ -156,7 +180,18 @@ class PlanCanvas {
         
         for (const state of this.plan.states) {
             
-            maker.appendText(state.date, 'div', 'date');
+            const dayOfWeek = this.dayOfWeekForDate(state.date);
+            const classNames = [
+                'date',
+                dayOfWeek,
+            ];
+            
+            if (this.isClosingDayOfWeek(dayOfWeek)) {
+                
+                classNames.push('closing-day');
+            }
+
+            maker.appendText(state.date, 'div', classNames);
         }
         
         return maker.node;
@@ -176,7 +211,19 @@ class PlanCanvas {
 
         for (const state of this.plan.states) {
             
-            maker.appendText(state.availability, 'div', ['availability', state.availabilityKind]);
+            const dayOfWeek = this.dayOfWeekForDate(state.date);
+            const classNames = [
+                'availability',
+                state.availabilityKind,
+                dayOfWeek,
+            ];
+
+            if (this.isClosingDayOfWeek(dayOfWeek)) {
+                
+                classNames.push('closing-day');
+            }
+
+            maker.appendText(state.availability, 'div', classNames);
         }
 
         return maker.node;
@@ -272,6 +319,11 @@ class NodeMaker {
                 node.classList.add(className);
             }
         }
+    }
+    
+    appendClassName(className) {
+    
+        this.root.classList.add(className);
     }
     
     appendNode(node) {

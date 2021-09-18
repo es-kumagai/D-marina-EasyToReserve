@@ -7,18 +7,16 @@
 
 div.canvas {
     
-/*    position: absolute;*/
-/*    top: 30pt;*/
-/*    left: 400pt;*/
-/*    white-space: nowrap;*/
     display: inline-block;
     vertical-align: top;
     margin: 12pt !important;
+    background-color: white;
 }
 
 div.canvas h1.course {
 
     background-color: #f0e68c;
+    margin-bottom: 8pt !important;
 }
 
 div.canvas section.course {
@@ -28,7 +26,6 @@ div.canvas section.course {
 div.canvas section.course + h1.course {
     
     margin-top: 16pt !important;
-    margin-bottom: 8pt !important;
 }
 
 div.canvas div.canvas-stack {
@@ -46,9 +43,53 @@ div.canvas div.canvas-stack > div {
     padding: 2pt 4pt !important;
 }
 
+div.canvas div.canvas-stack > div.date {
+
+    color: #5b6356;
+    font-weight: bold !important;
+}
+
 div.canvas div.canvas-stack > div.boat {
 
     min-width: 40pt;
+    color: white;
+    background-color: #cbb994;
+    font-weight: bold !important;
+}
+
+div.canvas div.canvas-stack > .closing-day {
+
+    background-color: #e7e7eb;
+}
+
+div.canvas div.canvas-stack > .sunday {
+    
+    background-color: #fdeff2;
+}
+
+div.canvas div.canvas-stack > .monday {
+
+}
+
+div.canvas div.canvas-stack > .tuesday {
+
+}
+
+div.canvas div.canvas-stack > .wednesday {
+
+}
+
+div.canvas div.canvas-stack > .thursday {
+
+}
+
+div.canvas div.canvas-stack > .friday {
+
+}
+
+div.canvas div.canvas-stack > .saturday {
+
+    background-color: #eaf4fc;
 }
 
 div.canvas div.canvas-date-stack {
