@@ -57,9 +57,9 @@ class StateIterator {
 
         this.representedVailabilityKind = {
             
-            'none' : 'availability-skip',
-            'res-end' : 'availability-invalid',
-            'calendar-content-td': 'availability-valid',
+            'none' : State.skip,
+            'res-end' : State.invalid,
+            'calendar-content-td': State.valid,
         }
     }
     

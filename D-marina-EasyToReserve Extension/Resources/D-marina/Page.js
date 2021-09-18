@@ -41,19 +41,22 @@ class Page {
             
             const nameNode = boatNode.getElementsByClassName('sp-res-step-title')[0];
             const nameIdNode = boatNode.getElementsByTagName('td')[0];
+            const anchorNode = nameIdNode.getElementsByTagName('a')[0];
 
-            if (!nameNode || !nameIdNode) {
+            if (!nameNode || !nameIdNode || !anchorNode) {
             
                 continue;
             }
             
             let name = nameNode.innerText;
             let nameId = nameIdNode.id;
+            let href = anchorNode.getAttribute('href');
+            let onclick = anchorNode.getAttribute('onclick');
 
             name = name.replace(/\s*（.*$/, '').replace(/[Ａ-Ｚａ-ｚ０-９]/g, char => { return String.fromCharCode(char.charCodeAt(0) - 0xFEE0) });
             nameId = nameId.replace(/^mp_id_/, '');
             
-            boats.push(new Boat(name, nameId));
+            boats.push(new Boat(name, nameId, href, onclick));
         }
         
         return boats;
@@ -88,10 +91,12 @@ class Page {
 
 class Boat {
     
-    constructor(name, id) {
+    constructor(name, id, href = undefined, onclick = undefined) {
         
         this.name = name;
         this.id = id;
+        this.href = href;
+        this.onclick = onclick;
     }
 }
 

@@ -2,14 +2,6 @@ class Canvas {
 
     constructor(page) {
 
-        Canvas.makeId = (id) => { return `easytoreserve-${id}` };
-        Canvas.makeCourseId = (course) => { return Canvas.makeId(`course-${course.id}`) };
-        
-        Canvas.id = Canvas.makeId('canvas');
-        Canvas.boatIdAttributeName = 'x-boat-id';
-        Canvas.boatOrderAttributeName = 'x-boat-order';
-        Canvas.courseIdAttributeName = 'x-course-id';
-
         const maker = new NodeMaker('div', 'canvas', Canvas.id);
         const node = maker.node;
 
@@ -124,12 +116,19 @@ class Canvas {
     }
 }
 
+Canvas.makeId = (id) => { return `easytoreserve-${id}` };
+Canvas.makeCourseId = (course) => { return Canvas.makeId(`course-${course.id}`) };
+
+Canvas.id = Canvas.makeId('canvas');
+Canvas.boatIdAttributeName = 'x-boat-id';
+Canvas.boatOrderAttributeName = 'x-boat-order';
+Canvas.courseIdAttributeName = 'x-course-id';
+
+
 class PlanCanvas {
     
     constructor(canvas, response) {
-        
-        PlanCanvas.closingDayOfWeek = 'tuesday';
-        
+                
         this.canvas = canvas;
         this.boat = response.boat;
         this.course = response.course;
@@ -199,15 +198,23 @@ class PlanCanvas {
     
     get planStackNode() {
         
-        const maker = new NodeMaker('div', ['canvas-stack', 'canvas-plan-stack']);
-        
         const boat = this.boat;
         const boatId = boat.id;
         const boatOrder = this.canvas.boatOrderFor(boat);
-        
+
+        const maker = new NodeMaker('div', ['canvas-stack', 'canvas-plan-stack']);
+        const anchorMaker = new NodeMaker('a');
+                
         maker.setAttribute(Canvas.boatIdAttributeName, boatId);
         maker.setAttribute(Canvas.boatOrderAttributeName, boatOrder);
-        maker.appendText(boat.name, 'div', 'boat');
+        
+        if (boat.href) anchorMaker.setAttribute('href', boat.href);
+        if (boat.onclick) anchorMaker.setAttribute('onclick', boat.onclick);
+        anchorMaker.appendText(boat.name);
+        
+        const anchorNode = anchorMaker.node;
+                
+        maker.appendNode(anchorNode, 'div', 'boat');
 
         for (const state of this.plan.states) {
             
@@ -217,13 +224,21 @@ class PlanCanvas {
                 state.availabilityKind,
                 dayOfWeek,
             ];
+            const attributes = {};
 
             if (this.isClosingDayOfWeek(dayOfWeek)) {
                 
                 classNames.push('closing-day');
             }
+            
+            if (state.availabilityKind === State.valid) {
 
-            maker.appendText(state.availability, 'div', classNames);
+                classNames.push('selectable');
+                attributes['href'] = 'void(0)';
+                attributes['onclick'] = `selectMainPlan(${this.boat.id}); selectSubPlan(${this.course.id});`;
+            }
+
+            maker.appendText(state.availability, 'div', classNames, attributes);
         }
 
         return maker.node;
@@ -257,10 +272,10 @@ class PlanCanvas {
     stateNode(state) {
 
         const maker = new NodeMaker('div', 'state');
-
+        
         maker.appendText(state.date, 'span', 'date');
         maker.appendText(state.availability, 'span', ['availability', state.availabilityKind]);
-        
+
         return maker.node;
     }
     
@@ -281,6 +296,9 @@ class PlanCanvas {
         return this.node.innerHTML;
     }
 }
+
+PlanCanvas.closingDayOfWeek = 'tuesday';
+
 
 class NodeMaker {
     
@@ -320,18 +338,44 @@ class NodeMaker {
             }
         }
     }
-    
+
+    applyAttributesTo(node, attributes) {
+        
+        if (!attributes) {
+        
+            return;
+        }
+
+        for (const key of Object.keys(attributes)) {
+            
+            node.setAttribute(key, attributes[key]);
+        }
+    }
+
     appendClassName(className) {
     
         this.root.classList.add(className);
     }
     
-    appendNode(node) {
+    appendNode(node, tagName = undefined, classNames = undefined, attributes = undefined) {
     
-        this.root.appendChild(node);
+        if (tagName) {
+            
+            const containerNode = document.createElement(tagName);
+            
+            this.applyClassNamesTo(containerNode, classNames);
+            this.applyAttributesTo(containerNode, attributes);
+            containerNode.appendChild(node);
+            
+            this.root.appendChild(containerNode);
+        }
+        else {
+            
+            this.root.appendChild(node);
+        }
     }
     
-    appendText(text, tagName = undefined, classNames = undefined) {
+    appendText(text, tagName = undefined, classNames = undefined, attributes = undefined) {
 
         const textNode = document.createTextNode(text);
         
@@ -340,6 +384,7 @@ class NodeMaker {
             const node = document.createElement(tagName);
             
             this.applyClassNamesTo(node, classNames);
+            this.applyAttributesTo(node, attributes);
             node.appendChild(textNode);
             
             this.appendNode(node);

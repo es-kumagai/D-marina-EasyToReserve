@@ -59,6 +59,21 @@ div.canvas div.canvas-stack > div.boat {
     font-weight: bold !important;
 }
 
+div.canvas div.canvas-stack > div.boat a {
+    
+    text-decoration: none !important;
+}
+
+div.canvas div.canvas-stack > div.boat a:hover {
+    
+    color: #bb5520 !important;
+}
+
+div.canvas div.canvas-stack > .selectable {
+
+    cursor: pointer;
+}
+
 div.canvas div.canvas-stack > .closing-day {
 
     background-color: #e7e7eb;

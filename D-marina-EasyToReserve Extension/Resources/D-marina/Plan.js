@@ -8,6 +8,10 @@ class State {
     }
 }
 
+State.valid = 'availability-valid';
+State.invalid = 'availability-invalid';
+State.skip = 'availability-skip';
+
 class Plan {
 
     constructor(boat, course, states) {
