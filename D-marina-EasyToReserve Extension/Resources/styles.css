@@ -15,8 +15,10 @@ div.canvas {
 
 div.canvas h1.course {
 
+    font-weight: bold !important;
     background-color: #f0e68c;
     margin-bottom: 8pt !important;
+    padding: 4pt 8pt !important;
 }
 
 div.canvas section.course {
@@ -25,7 +27,7 @@ div.canvas section.course {
 
 div.canvas section.course + h1.course {
     
-    margin-top: 16pt !important;
+    margin-top: 24pt !important;
 }
 
 div.canvas div.canvas-stack {
