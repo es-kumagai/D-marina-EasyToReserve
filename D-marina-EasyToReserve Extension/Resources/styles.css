@@ -1,10 +1,19 @@
-div.canvas {
+#container-iframe {
     
     position: absolute;
-    top: 30pt;
-    left: 400pt;
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.canvas {
     
-    width: 400px;
+/*    position: absolute;*/
+/*    top: 30pt;*/
+/*    left: 400pt;*/
+/*    white-space: nowrap;*/
+    display: inline-block;
+    vertical-align: top;
+    margin: 12pt !important;
 }
 
 div.canvas h1.course {
@@ -14,6 +23,46 @@ div.canvas h1.course {
 
 div.canvas section.course {
     
+}
+
+div.canvas section.course + h1.course {
+    
+    margin-top: 16pt !important;
+    margin-bottom: 8pt !important;
+}
+
+div.canvas div.canvas-stack {
+
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.canvas div.canvas-stack > div {
+
+    height: 20px;
+    white-space: nowrap;
+    border: 1pt solid #dcd3b2;
+    margin: 2pt !important;
+    padding: 2pt 4pt !important;
+}
+
+div.canvas div.canvas-stack > div.boat {
+
+    min-width: 40pt;
+}
+
+div.canvas div.canvas-date-stack {
+
+    width: 70pt;
+}
+
+div.canvas div.canvas-plan-stack {
+
+}
+
+div.canvas div.canvas-plan-stack > div {
+
+    text-align: center;
 }
 
 div.canvas div.boat {
@@ -52,21 +101,21 @@ div.canvas span.date {
     
 }
 
-div.canvas span.availability {
+div.canvas .availability {
     
 }
 
-div.canvas span.availability-skip {
+div.canvas .availability-skip {
     
     color: #c8c2be;
 }
 
-div.canvas span.availability-valid {
+div.canvas .availability-valid {
     
-    color: #1e50a2;
+    color: #89c3eb;
 }
 
-div.canvas span.availability-invalid {
+div.canvas .availability-invalid {
     
     color: #c9171e;
 }

@@ -11,7 +11,11 @@ class Canvas {
         const node = maker.node;
                 
         this.node = node;
-        document.body.appendChild(node);
+
+        const bodyNode = document.body;
+        const mainNode = document.getElementById('container-iframe');
+        
+        bodyNode.insertBefore(node, mainNode);
     }
 
     makeCourseNode(course) {
@@ -25,7 +29,7 @@ class Canvas {
         this.node.appendChild(sectionMaker.node);
     }
     
-    courseNodeBy(course) {
+    courseSectionNodeBy(course) {
         
         const id = Canvas.makeCourseId(course);
         
@@ -53,9 +57,14 @@ class Canvas {
         maker.appendNode(planCanvas.node);
  
         const node = maker.node;
-        const canvasNode = this.courseNodeBy(planCanvas.course);
+        const sectionNode = this.courseSectionNodeBy(planCanvas.course);
+
+        if (sectionNode.children.length == 0) {
         
-        canvasNode.appendChild(node);
+            sectionNode.appendChild(planCanvas.dateStackNode);
+        }
+        
+        sectionNode.appendChild(planCanvas.planStackNode);
     }
 }
 
@@ -70,6 +79,46 @@ class PlanCanvas {
         this.id = Canvas.makeCourseId(this.course);
     }
 
+    get node() {
+    
+        const maker = new NodeMaker('div', 'canvas-plan');
+        const plan = this.plan;
+
+        maker.appendNode(this.boatNode);
+        maker.appendNode(this.courseNode);
+        maker.appendNode(this.statesNode);
+        
+        return maker.node;
+    }
+    
+    get dateStackNode() {
+        
+        const maker = new NodeMaker('div', ['canvas-stack', 'canvas-date-stack']);
+        
+        maker.appendText('', 'div');
+        
+        for (const state of this.plan.states) {
+            
+            maker.appendText(state.date, 'div', 'date');
+        }
+        
+        return maker.node;
+    }
+    
+    get planStackNode() {
+        
+        const maker = new NodeMaker('div', ['canvas-stack', 'canvas-plan-stack']);
+        
+        maker.appendText(this.boat.name, 'div', 'boat');
+        
+        for (const state of this.plan.states) {
+            
+            maker.appendText(state.availability, 'div', ['availability', state.availabilityKind]);
+        }
+        
+        return maker.node;
+    }
+    
     get planHeaderNode() {
         
         return this.boatNode;
@@ -117,18 +166,6 @@ class PlanCanvas {
         return maker.node;
     }
 
-    get node() {
-    
-        const maker = new NodeMaker('div', 'canvas-plan');
-        const plan = this.plan;
-
-        maker.appendNode(this.boatNode);
-        maker.appendNode(this.courseNode);
-        maker.appendNode(this.statesNode);
-        
-        return maker.node;
-    }
-    
     get representsAsText() {
         
         return this.node.innerHTML;
@@ -154,6 +191,11 @@ class NodeMaker {
     }
     
     applyClassNamesTo(node, classNames) {
+        
+        if (!classNames) {
+        
+            return;
+        }
         
         if (typeof(classNames) === 'string') {
         
