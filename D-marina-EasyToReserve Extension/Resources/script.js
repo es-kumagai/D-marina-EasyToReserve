@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     
+    removeCanvas();
 });
 
 safari.self.addEventListener('message', (event) => {
@@ -10,22 +11,6 @@ safari.self.addEventListener('message', (event) => {
             receiveRequestAvailabilityOfAllReservationsMessage();
     }
 });
-
-//function getMainPlanItems() {
-//
-//    const mainPlans = document.getElementById('list_main_plan');
-//    const mainPlanItems = mainPlans.getElementsByTagName('tr');
-//
-//    return mainPlanItems;
-//}
-//
-//function getSubPlanItems() {
-//
-//    const subPlans = document.getElementById('list_sub_plan');
-//    const subPlanItems = subPlans.getElementsByTagName('tr');
-//
-//    return subPlanItems;
-//}
 
 function removeCanvas() {
 
@@ -39,44 +24,48 @@ function removeCanvas() {
 
 function receiveRequestAvailabilityOfAllReservationsMessage() {
     
+    const page = new Page();
+    const selectedDate = page.selectedDate;
+
+    if (!selectedDate) {
+    
+        alert('Start date is not selected.');
+        return;
+    }
+    
+    removeCanvas();
+    
+    const canvas = new Canvas();
+
+    for (const course of page.courses) {
+
+        canvas.makeCourseNode(course);
+        
+        for (const boat of page.boats) {
+
+            requestPlan(selectedDate, boat, course, (response) => {
+                
+                canvas.appendPlanCanvas(new PlanCanvas(response));
+            });
+        }
+    }
+}
+
+function requestPlan(startDate, boat, course, handler) {
+
     const request = new XMLHttpRequest();
-    const endpoint = new Endpoint(2021, 9, 21, 18, 3);
+    const endpoint = new Endpoint(startDate, boat.id, course.id);
 
     request.onreadystatechange = (event) => {
         
-        const canvasNode = document.getElementById('canvas');
-        
-        if (request.readyState == XMLHttpRequest.DONE && request.response && !canvasNode) {
+        if (request.readyState == XMLHttpRequest.DONE && request.response) {
 
-            const response = new Response(request.response);
-            const canvas = new Canvas(response.plan);
+            const response = new Response(boat, course, request.response);
             
-            document.body.appendChild(canvas.node);
+            handler(response);
         }
     };
     
-    this.removeCanvas();
-    
     request.open('GET', endpoint.url, true);
     request.send(null);
-    
-//    const mainPlanItems = getMainPlanItems();
-//
-//    for (const mainPlanItem of mainPlanItems) {
-//
-//        updateRequestAvailability(mainPlanItem);
-//        return;
-//    }
 }
-
-//function updateRequestAvailability(mainPlanItem) {
-//
-//    const subPlanItems = getSubPlanItems();
-//
-//    mainPlanItem.click();
-//
-//    for (const subPlanItem of subPlanItems) {
-//
-//
-//    }
-//}

@@ -29,6 +29,8 @@
 		B14C130B26F57EC300CFE930 /* Response.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C130A26F57EC300CFE930 /* Response.js */; };
 		B14C130D26F58D6E00CFE930 /* Canvas.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C130C26F58D6E00CFE930 /* Canvas.js */; };
 		B14C130F26F599BE00CFE930 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = B14C130E26F599BE00CFE930 /* styles.css */; };
+		B14C131126F5CEF300CFE930 /* Page.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C131026F5CEF300CFE930 /* Page.js */; };
+		B14C131326F5E01300CFE930 /* DateComponents.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C131226F5E01300CFE930 /* DateComponents.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		B14C130A26F57EC300CFE930 /* Response.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Response.js; sourceTree = "<group>"; };
 		B14C130C26F58D6E00CFE930 /* Canvas.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Canvas.js; sourceTree = "<group>"; };
 		B14C130E26F599BE00CFE930 /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
+		B14C131026F5CEF300CFE930 /* Page.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Page.js; sourceTree = "<group>"; };
+		B14C131226F5E01300CFE930 /* DateComponents.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = DateComponents.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,8 @@
 				B14C130526F570EF00CFE930 /* Plan.js */,
 				B14C130826F573B100CFE930 /* Endpoint.js */,
 				B14C130A26F57EC300CFE930 /* Response.js */,
+				B14C131026F5CEF300CFE930 /* Page.js */,
+				B14C131226F5E01300CFE930 /* DateComponents.js */,
 			);
 			path = "D-marina";
 			sourceTree = "<group>";
@@ -386,9 +392,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B14C131326F5E01300CFE930 /* DateComponents.js in Resources */,
 				B14C130626F570EF00CFE930 /* Plan.js in Resources */,
 				B14C130F26F599BE00CFE930 /* styles.css in Resources */,
 				B14C130B26F57EC300CFE930 /* Response.js in Resources */,
+				B14C131126F5CEF300CFE930 /* Page.js in Resources */,
 				B14C12F326F4EBEB00CFE930 /* SafariExtensionViewController.xib in Resources */,
 				B14C12F026F4EBEB00CFE930 /* ToolbarItemIcon.pdf in Resources */,
 				B14C130D26F58D6E00CFE930 /* Canvas.js in Resources */,

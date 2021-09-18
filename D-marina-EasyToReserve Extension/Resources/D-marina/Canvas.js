@@ -1,10 +1,73 @@
 class Canvas {
+
+    constructor() {
+
+        Canvas.makeId = (id) => { return `easytoreserve-${id}` };
+        Canvas.makeCourseId = (course) => { return Canvas.makeId(`course-${course.id}`) };
+        
+        Canvas.id = Canvas.makeId('canvas');
+
+        const maker = new NodeMaker('div', 'canvas', Canvas.id);
+        const node = maker.node;
+                
+        this.node = node;
+        document.body.appendChild(node);
+    }
+
+    makeCourseNode(course) {
+
+        const maker = new NodeMaker('h1', 'course');
+        const sectionMaker = new NodeMaker('section', 'course', Canvas.makeCourseId(course));
+        
+        maker.appendText(`コース : ${course.label}`);
+        
+        this.node.appendChild(maker.node);
+        this.node.appendChild(sectionMaker.node);
+    }
     
-    constructor(plan) {
+    courseNodeBy(course) {
+        
+        const id = Canvas.makeCourseId(course);
+        
+        for (const node of this.node.childNodes) {
 
-        Canvas.id = 'easytoreserve-canvas';
+            if (node.tagName.toLowerCase() !== 'section') {
+                
+                continue;
+            }
+            
+            if (node.id === id) {
+                
+                return node;
+            }
+        }
+        
+        return null;
+    }
+    
+    appendPlanCanvas(planCanvas) {
+    
+        const maker = new NodeMaker('div', 'plan');
+        const plan = this.plan;
 
-        this.plan = plan;
+        maker.appendNode(planCanvas.node);
+ 
+        const node = maker.node;
+        const canvasNode = this.courseNodeBy(planCanvas.course);
+        
+        canvasNode.appendChild(node);
+    }
+}
+
+class PlanCanvas {
+    
+    constructor(response) {
+        
+        this.boat = response.boat;
+        this.course = response.course;
+        this.plan = response.plan;
+
+        this.id = Canvas.makeCourseId(this.course);
     }
 
     get planHeaderNode() {
@@ -17,7 +80,7 @@ class Canvas {
         const maker = new NodeMaker('div', 'boat');
         
         maker.appendText('ボート', 'span', 'label');
-        maker.appendText(this.plan.boat, 'span', 'value');
+        maker.appendText(this.boat.name, 'span', 'value');
         
         return maker.node;
     }
@@ -27,7 +90,7 @@ class Canvas {
         const maker = new NodeMaker('div', 'course');
         
         maker.appendText('コース', 'span', 'label');
-        maker.appendText(this.plan.course, 'span', 'value');
+        maker.appendText(this.course.label, 'span', 'value');
         
         return maker.node;
     }
@@ -56,16 +119,12 @@ class Canvas {
 
     get node() {
     
-        const maker = new NodeMaker('div', 'canvas');
+        const maker = new NodeMaker('div', 'canvas-plan');
         const plan = this.plan;
 
         maker.appendNode(this.boatNode);
         maker.appendNode(this.courseNode);
         maker.appendNode(this.statesNode);
-        
-        const node = maker.node;
-        
-        node.id = Canvas.id;
         
         return maker.node;
     }
@@ -78,10 +137,15 @@ class Canvas {
 
 class NodeMaker {
     
-    constructor(tagName, classNames = undefined) {
+    constructor(tagName, classNames = undefined, id = undefined) {
         
         this.root = document.createElement(tagName);
         this.applyClassNamesTo(this.root, classNames);
+        
+        if (id) {
+            
+            this.root.id = id;
+        }
     }
     
     get node() {

@@ -1,5 +1,19 @@
 div.canvas {
     
+    position: absolute;
+    top: 30pt;
+    left: 400pt;
+    
+    width: 400px;
+}
+
+div.canvas h1.course {
+
+    background-color: #f0e68c;
+}
+
+div.canvas section.course {
+    
 }
 
 div.canvas div.boat {

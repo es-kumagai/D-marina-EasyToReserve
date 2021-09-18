@@ -61,6 +61,22 @@
 					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
 				</array>
 			</dict>
+			<dict>
+				<key>Script</key>
+				<string>Page.js</string>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+			</dict>
+			<dict>
+				<key>Script</key>
+				<string>DateComponents.js</string>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
 		<dict>

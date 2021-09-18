@@ -1,12 +1,10 @@
 class Endpoint {
     
-    constructor(startYear, startMonth, startDay, boatID, courseID) {
+    constructor(startDateComponents, boatID, courseID) {
         
         this.uri = 'https://d-marina.resv.jp/reserve/get_data.php';
         this.mode = 'maincalendar';
-        this.startYear = startYear;
-        this.startMonth = startMonth;
-        this.startDay = startDay;
+        this.startDate = startDateComponents;
         this.boatID = boatID;
         this.courseID = courseID;
         this.options = {
@@ -43,7 +41,7 @@ class Endpoint {
 
         const uri = `${this.uri}`;
         const mode = `mode=${this.mode}`;
-        const date = `t_year=${this.startYear}&t_month=${this.startMonth}&t_day=${this.startDay}`;
+        const date = `t_year=${this.startDate.year}&t_month=${this.startDate.month}&t_day=${this.startDate.day}`;
         const plan = `mp_id=${this.boatID}&sp_id=${this.courseID}`;
         const options = this.optionsQuery;
         

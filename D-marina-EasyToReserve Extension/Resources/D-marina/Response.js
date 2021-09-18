@@ -1,6 +1,9 @@
 class Response {
     
-    constructor(json) {
+    constructor(boat, course, json) {
+        
+        this.boat = boat;
+        this.course = course;
         
         const response = JSON.parse(json);
         
@@ -26,7 +29,7 @@ class Response {
         const dateNodes = datesNode.getElementsByTagName('th');
         const availabilityNodes = availabilitiesNode.getElementsByTagName('td');
         
-        const plan = new Plan('BOAT', 'COURSE', new Array());
+        const plan = new Plan(this.boat.name, this.course.label, new Array());
         const stateIterator = new StateIterator(dateNodes[1], availabilityNodes[0]);
         
         for (const state of stateIterator) {
@@ -58,7 +61,7 @@ class StateIterator {
 
         this.representedVailabilityAsText = {
             
-            'none' : '定休日',
+            'none' : '−',
             'res-end' : '✖︎',
             'calendar-content-td': '●',
         }
