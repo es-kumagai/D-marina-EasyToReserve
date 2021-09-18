@@ -22,7 +22,7 @@ function removeCanvas() {
     }
 }
 
-function receiveRequestAvailabilityOfAllReservationsMessage() {
+async function receiveRequestAvailabilityOfAllReservationsMessage() {
     
     const page = new Page();
     const selectedDate = page.selectedDate;
@@ -43,29 +43,31 @@ function receiveRequestAvailabilityOfAllReservationsMessage() {
         
         for (const boat of page.boats) {
 
-            requestPlan(selectedDate, boat, course, (response) => {
-                
-                canvas.appendPlanCanvas(new PlanCanvas(canvas, response));
-            });
+            const response = await requestPlan(selectedDate, boat, course);
+            
+            canvas.appendPlanCanvas(new PlanCanvas(canvas, response));
         }
     }
 }
 
-function requestPlan(startDate, boat, course, handler) {
+function requestPlan(startDate, boat, course) {
 
     const request = new XMLHttpRequest();
     const endpoint = new Endpoint(startDate, boat.id, course.id);
 
-    request.onreadystatechange = (event) => {
+    return new Promise(resolve => {
         
-        if (request.readyState == XMLHttpRequest.DONE && request.response) {
-
-            const response = new Response(boat, course, request.response);
+        request.onreadystatechange = (event) => {
             
-            handler(response);
-        }
-    };
-    
-    request.open('GET', endpoint.url, true);
-    request.send(null);
+            if (request.readyState == XMLHttpRequest.DONE && request.response) {
+
+                const response = new Response(boat, course, request.response);
+                
+                resolve(response);
+            }
+        };
+        
+        request.open('GET', endpoint.url, true);
+        request.send(null);
+    });
 }
