@@ -1,29 +1,105 @@
 class Canvas {
 
-    constructor(page) {
+    constructor(page, startDate, baseDate) {
 
         const maker = new NodeMaker('div', 'canvas', Canvas.id);
         const node = maker.node;
 
         this.page = page;
+        this.startDate = startDate;
+        this.baseDate = baseDate;
         this.node = node;
 
-        const bodyNode = document.body;
-        const mainNode = document.getElementById('container-iframe');
-        
-        bodyNode.insertBefore(node, mainNode);
+        this.rootNode.insertBefore(node, this.mainNode);
     }
 
-    makeCourseNode(course) {
+    get rootNode() {
+    
+        return document.body;
+    }
+    
+    get mainNode() {
+        
+        return document.getElementById('container-iframe');
+    }
+
+    get navigatorNode() {
+    
+        return document.getElementById(Canvas.navigatorId);
+    }
+    
+    makeNavigatorNode() {
+    
+        const existingNavigatorNode = this.navigatorNode;
+        
+        if (existingNavigatorNode) {
+        
+            existingNavigatorNode.remove();
+        }
+        
+        const maker = new NodeMaker('aside', 'navigator', Canvas.navigatorId);
+        const buttonsMaker = new NodeMaker('div', 'buttons');
+        const buttonMaker = new NodeMaker('button', 'move-to-canvas');
+    
+        buttonMaker.appendText('空き状況の一覧にもどる');
+        buttonMaker.setAttribute('onclick', 'window.scrollTo({top:0,left:0,behavior:\'smooth\'});');
+        
+        buttonsMaker.appendNode(buttonMaker.node);
+        maker.appendNode(buttonsMaker.node);
+
+        this.mainNode.appendChild(maker.node);
+    }
+    
+    makeCourseNode(course, appendingNode) {
 
         const maker = new NodeMaker('h1', 'course');
         const sectionMaker = new NodeMaker('section', 'course', Canvas.makeCourseId(course));
         
         maker.setAttribute(Canvas.courseIdAttributeName, course.id);
-        maker.appendText(`コース : ${course.label}`);
+        maker.appendText(`コース : ${course.label}`, 'span', 'label');
+        
+        if (appendingNode) {
+            
+            maker.appendNode(appendingNode);
+        }
         
         this.node.appendChild(maker.node);
         this.node.appendChild(sectionMaker.node);
+    }
+
+    calendarMoveNodeTo(date, label) {
+    
+        const maker = new NodeMaker('button', ['calendar-move', 'nextWeek']);
+
+        maker.appendText(label);
+        maker.setAttribute('onclick', `getMaincalendar(${date.year},${date.month},${date.day},true); e = new CustomEvent("UPDATE_AVAILABILITIES", { detail: { selectedDate : ${date.text}, baseDate : ${this.baseDate.text} } });  document.dispatchEvent(e);`);
+        
+        return maker.node;
+    }
+
+    get calendarMoveBaseDateNode() {
+    
+        return this.calendarMoveNodeTo(this.baseDate, '直近の状況');
+    }
+
+    get calendarMoveNextWeekNode() {
+    
+        return this.calendarMoveNodeTo(this.startDate.nextWeek, '翌週');
+    }
+    
+    get calendarMovePreviousWeekNode() {
+    
+        return this.calendarMoveNodeTo(this.startDate.previousWeek, '前週');
+    }
+    
+    get calendarMoveNextMonthNode() {
+    
+        return this.calendarMoveNodeTo(this.startDate.nextMonth, '翌月');
+    }
+    
+    get calendarMovePreviousMonthNode() {
+    
+        return this.calendarMoveNodeTo(this.startDate.previousMonth, '前月');
     }
     
     get courseSectionNodes() {
@@ -120,283 +196,7 @@ Canvas.makeId = (id) => { return `easytoreserve-${id}` };
 Canvas.makeCourseId = (course) => { return Canvas.makeId(`course-${course.id}`) };
 
 Canvas.id = Canvas.makeId('canvas');
+Canvas.navigatorId = Canvas.makeId('canvas-navigator');
 Canvas.boatIdAttributeName = 'x-boat-id';
 Canvas.boatOrderAttributeName = 'x-boat-order';
 Canvas.courseIdAttributeName = 'x-course-id';
-
-
-class PlanCanvas {
-    
-    constructor(canvas, response) {
-                
-        this.canvas = canvas;
-        this.boat = response.boat;
-        this.course = response.course;
-        this.plan = response.plan;
-
-        this.id = Canvas.makeCourseId(this.course);
-    }
-
-    get node() {
-    
-        const maker = new NodeMaker('div', 'canvas-plan');
-        const plan = this.plan;
-
-        maker.appendNode(this.boatNode);
-        maker.appendNode(this.courseNode);
-        maker.appendNode(this.statesNode);
-        
-        return maker.node;
-    }
-    
-    dayOfWeekForDate(date) {
-        
-        const dayOfWeek = date.slice(-3);
-        const dayOfWeekTable = {
-         
-            '(日)' : 'sunday',
-            '(月)' : 'monday',
-            '(火)' : 'tuesday',
-            '(水)' : 'wednesday',
-            '(木)' : 'thursday',
-            '(金)' : 'friday',
-            '(土)' : 'saturday',
-        };
-
-        return dayOfWeekTable[dayOfWeek];
-    }
-    
-    isClosingDayOfWeek(dayOfWeek) {
-        
-        return dayOfWeek === PlanCanvas.closingDayOfWeek;
-    }
-    
-    get dateStackNode() {
-        
-        const maker = new NodeMaker('div', ['canvas-stack', 'canvas-date-stack']);
-        
-        maker.appendText('', 'div');
-        
-        for (const state of this.plan.states) {
-            
-            const dayOfWeek = this.dayOfWeekForDate(state.date);
-            const classNames = [
-                'date',
-                dayOfWeek,
-            ];
-            
-            if (this.isClosingDayOfWeek(dayOfWeek)) {
-                
-                classNames.push('closing-day');
-            }
-
-            maker.appendText(state.date, 'div', classNames);
-        }
-        
-        return maker.node;
-    }
-    
-    get planStackNode() {
-        
-        const boat = this.boat;
-        const boatId = boat.id;
-        const boatOrder = this.canvas.boatOrderFor(boat);
-
-        const maker = new NodeMaker('div', ['canvas-stack', 'canvas-plan-stack']);
-        const anchorMaker = new NodeMaker('a');
-                
-        maker.setAttribute(Canvas.boatIdAttributeName, boatId);
-        maker.setAttribute(Canvas.boatOrderAttributeName, boatOrder);
-        
-        if (boat.href) anchorMaker.setAttribute('href', boat.href);
-        if (boat.onclick) anchorMaker.setAttribute('onclick', boat.onclick);
-        anchorMaker.appendText(boat.name);
-        
-        const anchorNode = anchorMaker.node;
-                
-        maker.appendNode(anchorNode, 'div', 'boat');
-
-        for (const state of this.plan.states) {
-            
-            const dayOfWeek = this.dayOfWeekForDate(state.date);
-            const classNames = [
-                'availability',
-                state.availabilityKind,
-                dayOfWeek,
-            ];
-            const attributes = {};
-
-            if (this.isClosingDayOfWeek(dayOfWeek)) {
-                
-                classNames.push('closing-day');
-            }
-            
-            if (state.availabilityKind === State.valid) {
-
-                classNames.push('selectable');
-                attributes['href'] = 'void(0)';
-                attributes['onclick'] = `selectMainPlan(${this.boat.id}); selectSubPlan(${this.course.id});`;
-            }
-
-            maker.appendText(state.availability, 'div', classNames, attributes);
-        }
-
-        return maker.node;
-    }
-    
-    get planHeaderNode() {
-        
-        return this.boatNode;
-    }
-    
-    get boatNode() {
-
-        const maker = new NodeMaker('div', 'boat');
-        
-        maker.appendText('ボート', 'span', 'label');
-        maker.appendText(this.boat.name, 'span', 'value');
-        
-        return maker.node;
-    }
-
-    get courseNode() {
-
-        const maker = new NodeMaker('div', 'course');
-        
-        maker.appendText('コース', 'span', 'label');
-        maker.appendText(this.course.label, 'span', 'value');
-        
-        return maker.node;
-    }
-    
-    stateNode(state) {
-
-        const maker = new NodeMaker('div', 'state');
-        
-        maker.appendText(state.date, 'span', 'date');
-        maker.appendText(state.availability, 'span', ['availability', state.availabilityKind]);
-
-        return maker.node;
-    }
-    
-    get statesNode() {
-        
-        const maker = new NodeMaker('div', 'states');
-        
-        for (const state of this.plan.states) {
-
-            maker.appendNode(this.stateNode(state));
-        }
-        
-        return maker.node;
-    }
-
-    get representsAsText() {
-        
-        return this.node.innerHTML;
-    }
-}
-
-PlanCanvas.closingDayOfWeek = 'tuesday';
-
-
-class NodeMaker {
-    
-    constructor(tagName, classNames = undefined, id = undefined) {
-        
-        this.root = document.createElement(tagName);
-        this.applyClassNamesTo(this.root, classNames);
-        this.attributes = {};
-        
-        if (id) {
-            
-            this.root.id = id;
-        }
-    }
-    
-    get node() {
-        
-        return this.root;
-    }
-    
-    applyClassNamesTo(node, classNames) {
-        
-        if (!classNames) {
-        
-            return;
-        }
-        
-        if (typeof(classNames) === 'string') {
-        
-            node.classList.add(classNames);
-        }
-        else {
-
-            for (const className of classNames) {
-            
-                node.classList.add(className);
-            }
-        }
-    }
-
-    applyAttributesTo(node, attributes) {
-        
-        if (!attributes) {
-        
-            return;
-        }
-
-        for (const key of Object.keys(attributes)) {
-            
-            node.setAttribute(key, attributes[key]);
-        }
-    }
-
-    appendClassName(className) {
-    
-        this.root.classList.add(className);
-    }
-    
-    appendNode(node, tagName = undefined, classNames = undefined, attributes = undefined) {
-    
-        if (tagName) {
-            
-            const containerNode = document.createElement(tagName);
-            
-            this.applyClassNamesTo(containerNode, classNames);
-            this.applyAttributesTo(containerNode, attributes);
-            containerNode.appendChild(node);
-            
-            this.root.appendChild(containerNode);
-        }
-        else {
-            
-            this.root.appendChild(node);
-        }
-    }
-    
-    appendText(text, tagName = undefined, classNames = undefined, attributes = undefined) {
-
-        const textNode = document.createTextNode(text);
-        
-        if (tagName) {
-            
-            const node = document.createElement(tagName);
-            
-            this.applyClassNamesTo(node, classNames);
-            this.applyAttributesTo(node, attributes);
-            node.appendChild(textNode);
-            
-            this.appendNode(node);
-        }
-        else {
-            
-            this.appendNode(textNode);
-        }
-    }
-    
-    setAttribute(name, value) {
-        
-        this.root.setAttribute(name, value);
-    }
-}

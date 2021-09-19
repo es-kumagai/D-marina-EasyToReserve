@@ -1,16 +1,36 @@
-#container-iframe {
+body {
     
-    position: absolute;
-    display: inline-block;
-    vertical-align: top;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
-div.canvas {
+#container-iframe {
+    
+    display: inline-block;
+    vertical-align: top;
+    width: auto !important;
+}
+
+#easytoreserve-canvas {
     
     display: inline-block;
     vertical-align: top;
     margin: 12pt !important;
     background-color: white;
+    white-space: nowrap;
+}
+
+#easytoreserve-canvas-navigator {
+    
+    border-top: 1px solid #f0e68c;
+    margin: 12pt;
+    padding-top: 8pt;
+}
+
+#easytoreserve-canvas-navigator .buttons {
+
+    background-color: #f0e68c;
+    padding: 8pt !important;
 }
 
 div.canvas h1.course {
@@ -19,10 +39,23 @@ div.canvas h1.course {
     background-color: #f0e68c;
     margin-bottom: 8pt !important;
     padding: 4pt 8pt !important;
+    text-align: right;
+}
+
+div.canvas h1.course .label {
+    
+    margin-bottom: 8pt !important;
+    padding: 4pt 8pt !important;
+    float: left;
+}
+
+div.canvas h1.course .calendar-buttons {
+
 }
 
 div.canvas section.course {
     
+    clear: both;
 }
 
 div.canvas section.course + h1.course {
@@ -176,4 +209,16 @@ div.canvas .availability-valid {
 div.canvas .availability-invalid {
     
     color: #c9171e;
+}
+
+div.canvas .calendar-buttons button {
+    
+    padding: 4pt 8pt;
+    cursor: pointer;
+}
+
+aside.navigator button {
+    
+    padding: 4pt 8pt;
+    cursor: pointer;
 }

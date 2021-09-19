@@ -33,6 +33,11 @@
 		B1E8D84226F72C73001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */; };
 		B1E8D84626F72DC2001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */; };
 		B1E8D84D26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84C26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf */; };
+		B1E8D84F26F761AC001B5AD7 /* PlanCanvas.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84E26F761AC001B5AD7 /* PlanCanvas.js */; };
+		B1E8D85126F76203001B5AD7 /* State.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85026F76203001B5AD7 /* State.js */; };
+		B1E8D85326F76230001B5AD7 /* StateIterator.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85226F76230001B5AD7 /* StateIterator.js */; };
+		B1E8D85526F76262001B5AD7 /* Boat.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85426F76262001B5AD7 /* Boat.js */; };
+		B1E8D85726F76266001B5AD7 /* Course.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85626F76266001B5AD7 /* Course.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +112,6 @@
 		B1E8D83326F70397001B5AD7 /* Toolbar Icon.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Toolbar Icon.afdesign"; sourceTree = "<group>"; };
 		B1E8D83526F706D1001B5AD7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B1E8D83926F707B8001B5AD7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		B1E8D83A26F70DE4001B5AD7 /* show-all-availability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "show-all-availability.png"; sourceTree = "<group>"; };
 		B1E8D83B26F70E40001B5AD7 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		B1E8D83C26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		B1E8D83E26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ja; path = ../ja.lproj/Main.html; sourceTree = "<group>"; };
@@ -116,6 +120,12 @@
 		B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B1E8D84726F73BAE001B5AD7 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
 		B1E8D84C26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ToolbarItemIcon-Beta.pdf"; sourceTree = "<group>"; };
+		B1E8D84E26F761AC001B5AD7 /* PlanCanvas.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = PlanCanvas.js; sourceTree = "<group>"; };
+		B1E8D85026F76203001B5AD7 /* State.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = State.js; sourceTree = "<group>"; };
+		B1E8D85226F76230001B5AD7 /* StateIterator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = StateIterator.js; sourceTree = "<group>"; };
+		B1E8D85426F76262001B5AD7 /* Boat.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Boat.js; sourceTree = "<group>"; };
+		B1E8D85626F76266001B5AD7 /* Course.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Course.js; sourceTree = "<group>"; };
+		B1E8D85826F792D4001B5AD7 /* show-all-availability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "show-all-availability.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,12 +255,17 @@
 		B14C130726F571B700CFE930 /* D-marina */ = {
 			isa = PBXGroup;
 			children = (
+				B1E8D85426F76262001B5AD7 /* Boat.js */,
 				B14C130C26F58D6E00CFE930 /* Canvas.js */,
-				B14C130526F570EF00CFE930 /* Plan.js */,
-				B14C130826F573B100CFE930 /* Endpoint.js */,
-				B14C130A26F57EC300CFE930 /* Response.js */,
-				B14C131026F5CEF300CFE930 /* Page.js */,
+				B1E8D85626F76266001B5AD7 /* Course.js */,
 				B14C131226F5E01300CFE930 /* DateComponents.js */,
+				B14C130826F573B100CFE930 /* Endpoint.js */,
+				B14C131026F5CEF300CFE930 /* Page.js */,
+				B14C130526F570EF00CFE930 /* Plan.js */,
+				B1E8D84E26F761AC001B5AD7 /* PlanCanvas.js */,
+				B14C130A26F57EC300CFE930 /* Response.js */,
+				B1E8D85026F76203001B5AD7 /* State.js */,
+				B1E8D85226F76230001B5AD7 /* StateIterator.js */,
 			);
 			path = "D-marina";
 			sourceTree = "<group>";
@@ -268,10 +283,10 @@
 		B1E8D83826F7072A001B5AD7 /* README */ = {
 			isa = PBXGroup;
 			children = (
-				B1E8D83926F707B8001B5AD7 /* Icon.png */,
-				B1E8D83A26F70DE4001B5AD7 /* show-all-availability.png */,
-				B1E8D83B26F70E40001B5AD7 /* toolbar.png */,
 				B1E8D84726F73BAE001B5AD7 /* app.png */,
+				B1E8D83926F707B8001B5AD7 /* Icon.png */,
+				B1E8D85826F792D4001B5AD7 /* show-all-availability.png */,
+				B1E8D83B26F70E40001B5AD7 /* toolbar.png */,
 			);
 			path = README;
 			sourceTree = "<group>";
@@ -433,16 +448,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14C131326F5E01300CFE930 /* DateComponents.js in Resources */,
+				B1E8D85726F76266001B5AD7 /* Course.js in Resources */,
 				B14C130626F570EF00CFE930 /* Plan.js in Resources */,
+				B1E8D85326F76230001B5AD7 /* StateIterator.js in Resources */,
 				B14C130F26F599BE00CFE930 /* styles.css in Resources */,
 				B14C130B26F57EC300CFE930 /* Response.js in Resources */,
 				B14C131126F5CEF300CFE930 /* Page.js in Resources */,
 				B1E8D84D26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf in Resources */,
 				B14C130D26F58D6E00CFE930 /* Canvas.js in Resources */,
+				B1E8D85526F76262001B5AD7 /* Boat.js in Resources */,
 				B14C130926F573B100CFE930 /* Endpoint.js in Resources */,
+				B1E8D84F26F761AC001B5AD7 /* PlanCanvas.js in Resources */,
 				B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */,
 				B1E8D84626F72DC2001B5AD7 /* InfoPlist.strings in Resources */,
 				B1E8D83226F70332001B5AD7 /* ToolbarItemIcon.pdf in Resources */,
+				B1E8D85126F76203001B5AD7 /* State.js in Resources */,
 				B14C12EE26F4EBEB00CFE930 /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

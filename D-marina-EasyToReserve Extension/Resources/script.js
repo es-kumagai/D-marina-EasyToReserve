@@ -3,6 +3,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
     removeCanvas();
 });
 
+document.addEventListener("UPDATE_AVAILABILITIES", (event) => {
+   
+    const startDate = new DateComponents(String(event.detail['selectedDate']));
+    const baseDate = new DateComponents(String(event.detail['baseDate']));
+
+    updateAvailabilities(startDate, baseDate);
+});
+
+document.addEventListener("MOVE_TO_CALENDAR", (event) => {
+    
+    const canvasNode = document.getElementById(Canvas.id);
+    const calendarNode = document.getElementById('calendar');
+    
+    const x = canvasNode.clientLeft + canvasNode.clientWidth - 300;
+    const y = calendarNode.offsetTop - 300;
+    
+    window.scrollTo({
+        top: x,
+        left: y,
+        behavior: 'smooth',
+    });
+});
+
 safari.self.addEventListener('message', (event) => {
     
     switch (event.name) {
@@ -18,16 +41,23 @@ function removeCanvas() {
     
     if (canvasNode) {
         
-        document.body.removeChild(canvasNode);
+        canvasNode.remove();
     }
 }
 
-async function receiveRequestAvailabilityOfAllReservationsMessage() {
+function receiveRequestAvailabilityOfAllReservationsMessage() {
     
     const page = new Page();
-    const selectedDate = page.selectedDate;
+    const date = page.selectedDate;
+    
+    updateAvailabilities(date, date);
+}
 
-    if (!selectedDate) {
+async function updateAvailabilities(startDate, baseDate) {
+
+    const page = new Page();
+
+    if (!startDate) {
     
         alert('Start date is not selected.');
         return;
@@ -35,15 +65,23 @@ async function receiveRequestAvailabilityOfAllReservationsMessage() {
     
     removeCanvas();
     
-    const canvas = new Canvas(page);
+    const canvas = new Canvas(page, startDate, baseDate);
 
+    canvas.makeNavigatorNode();
+    
     for (const course of page.courses) {
 
-        canvas.makeCourseNode(course);
+        const maker = new NodeMaker('span', 'calendar-buttons');
+        
+        maker.appendNode(canvas.calendarMoveBaseDateNode);
+        maker.appendNode(canvas.calendarMoveNextWeekNode);
+        maker.appendNode(canvas.calendarMoveNextMonthNode);
+
+        canvas.makeCourseNode(course, maker.node);
         
         for (const boat of page.boats) {
 
-            const response = await requestPlan(selectedDate, boat, course);
+            const response = await requestPlan(startDate, boat, course);
             
             canvas.appendPlanCanvas(new PlanCanvas(canvas, response));
         }
