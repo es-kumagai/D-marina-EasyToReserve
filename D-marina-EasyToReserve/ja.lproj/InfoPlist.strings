@@ -8,3 +8,4 @@
 
 "CFBundleDisplayName" = "予約サポート for D-marina";
 "CFBundleName" = "予約サポート for D-marina";
+CFBundleExecutable = "予約サポート for D-marina";

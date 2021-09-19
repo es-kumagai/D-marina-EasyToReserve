@@ -34,6 +34,7 @@
 		B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D83326F70397001B5AD7 /* Toolbar Icon.afdesign */; };
 		B1E8D84226F72C73001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */; };
 		B1E8D84626F72DC2001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */; };
+		B1E8D84D26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84C26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		B1E8D84326F72C73001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B1E8D84726F73BAE001B5AD7 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
+		B1E8D84C26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ToolbarItemIcon-Beta.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				B14C130726F571B700CFE930 /* D-marina */,
 				B14C12ED26F4EBEB00CFE930 /* script.js */,
 				B1E8D83126F70332001B5AD7 /* ToolbarItemIcon.pdf */,
+				B1E8D84C26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf */,
 				B14C130E26F599BE00CFE930 /* styles.css */,
 			);
 			path = Resources;
@@ -441,6 +444,7 @@
 				B14C130F26F599BE00CFE930 /* styles.css in Resources */,
 				B14C130B26F57EC300CFE930 /* Response.js in Resources */,
 				B14C131126F5CEF300CFE930 /* Page.js in Resources */,
+				B1E8D84D26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf in Resources */,
 				B14C12F326F4EBEB00CFE930 /* SafariExtensionViewController.xib in Resources */,
 				B14C130D26F58D6E00CFE930 /* Canvas.js in Resources */,
 				B14C130926F573B100CFE930 /* Endpoint.js in Resources */,
@@ -586,6 +590,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ES_COPYRIGHT = "2021 Copyright © Tomohiro Kumagai";
+				ES_TOOLBARITEM_ICON = "ToolbarItemIcon-Beta.pdf";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -648,6 +654,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ES_COPYRIGHT = "2021 Copyright © Tomohiro Kumagai";
+				ES_TOOLBARITEM_ICON = ToolbarItemIcon.pdf;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -675,8 +683,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "EZ-NET Reservation Support Tool for D-marina";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright \U0003© Tomohiro Kumagai";
+				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -688,7 +696,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve-Debug.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -706,8 +714,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "EZ-NET Reservation Support Tool for D-marina";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright \U0003© Tomohiro Kumagai";
+				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -731,7 +739,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Beta";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "D-marina-EasyToReserve/D-marina-EasyToReserve.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -743,7 +751,7 @@
 				INFOPLIST_FILE = "D-marina-EasyToReserve/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright \U0003© Tomohiro Kumagai";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -758,8 +766,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve-Debug";
+				PRODUCT_NAME = "D-marina-EasyToReserve";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -781,7 +789,7 @@
 				INFOPLIST_FILE = "D-marina-EasyToReserve/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright \U0003© Tomohiro Kumagai";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -797,7 +805,7 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.D-marina-EasyToReserve";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "D-marina-EasyToReserve";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
