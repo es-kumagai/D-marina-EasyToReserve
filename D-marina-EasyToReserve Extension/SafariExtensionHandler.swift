@@ -12,7 +12,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
+
         }
     }
 
@@ -22,14 +22,33 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
     
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-        // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
-        validationHandler(true, "")
-    }
-    
-    override func popoverViewController() -> SFSafariExtensionViewController {
-        return SafariExtensionViewController.shared
-    }
 
+        window.getActiveTab { tab in
+            
+            guard let tab = tab else {
+                
+                return validationHandler(false, "")
+            }
+            
+            tab.getActivePage { page in
+                
+                guard let page = page else {
+                    
+                    return validationHandler(false, "")
+                }
+                
+                page.getPropertiesWithCompletionHandler { properties in
+                    
+                    guard let properties = properties else {
+
+                        return validationHandler(false, "")
+                    }
+                    
+                    validationHandler(properties.url?.path == "/reserve/calendar.php", "")
+                }
+            }
+        }
+    }
 }
 
 extension SafariExtensionHandler {

@@ -19,9 +19,7 @@
 		B14C12DE26F4EBEB00CFE930 /* D_marina_EasyToReserveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12DD26F4EBEB00CFE930 /* D_marina_EasyToReserveUITestsLaunchTests.swift */; };
 		B14C12E426F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B14C12E326F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B14C12E926F4EBEB00CFE930 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */; };
-		B14C12EB26F4EBEB00CFE930 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12EA26F4EBEB00CFE930 /* SafariExtensionViewController.swift */; };
 		B14C12EE26F4EBEB00CFE930 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C12ED26F4EBEB00CFE930 /* script.js */; };
-		B14C12F326F4EBEB00CFE930 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14C12F126F4EBEB00CFE930 /* SafariExtensionViewController.xib */; };
 		B14C130626F570EF00CFE930 /* Plan.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C130526F570EF00CFE930 /* Plan.js */; };
 		B14C130926F573B100CFE930 /* Endpoint.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C130826F573B100CFE930 /* Endpoint.js */; };
 		B14C130B26F57EC300CFE930 /* Response.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C130A26F57EC300CFE930 /* Response.js */; };
@@ -93,9 +91,7 @@
 		B14C12DD26F4EBEB00CFE930 /* D_marina_EasyToReserveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_marina_EasyToReserveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B14C12E326F4EBEB00CFE930 /* D-marina-EasyToReserve Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "D-marina-EasyToReserve Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
-		B14C12EA26F4EBEB00CFE930 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		B14C12ED26F4EBEB00CFE930 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
-		B14C12F226F4EBEB00CFE930 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		B14C12F426F4EBEB00CFE930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B14C12F526F4EBEB00CFE930 /* D_marina_EasyToReserve_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = D_marina_EasyToReserve_Extension.entitlements; sourceTree = "<group>"; };
 		B14C130526F570EF00CFE930 /* Plan.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Plan.js; sourceTree = "<group>"; };
@@ -114,7 +110,6 @@
 		B1E8D83A26F70DE4001B5AD7 /* show-all-availability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "show-all-availability.png"; sourceTree = "<group>"; };
 		B1E8D83B26F70E40001B5AD7 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		B1E8D83C26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		B1E8D83D26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
 		B1E8D83E26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ja; path = ../ja.lproj/Main.html; sourceTree = "<group>"; };
 		B1E8D83F26F72C31001B5AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B1E8D84326F72C73001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -227,8 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */,
-				B14C12EA26F4EBEB00CFE930 /* SafariExtensionViewController.swift */,
-				B14C12F126F4EBEB00CFE930 /* SafariExtensionViewController.xib */,
 				B14C12F426F4EBEB00CFE930 /* Info.plist */,
 				B14C12F526F4EBEB00CFE930 /* D_marina_EasyToReserve_Extension.entitlements */,
 				B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */,
@@ -445,7 +438,6 @@
 				B14C130B26F57EC300CFE930 /* Response.js in Resources */,
 				B14C131126F5CEF300CFE930 /* Page.js in Resources */,
 				B1E8D84D26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf in Resources */,
-				B14C12F326F4EBEB00CFE930 /* SafariExtensionViewController.xib in Resources */,
 				B14C130D26F58D6E00CFE930 /* Canvas.js in Resources */,
 				B14C130926F573B100CFE930 /* Endpoint.js in Resources */,
 				B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */,
@@ -488,7 +480,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B14C12EB26F4EBEB00CFE930 /* SafariExtensionViewController.swift in Sources */,
 				B14C12E926F4EBEB00CFE930 /* SafariExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,15 +521,6 @@
 				B1E8D83C26F728AF001B5AD7 /* ja */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B14C12F126F4EBEB00CFE930 /* SafariExtensionViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B14C12F226F4EBEB00CFE930 /* Base */,
-				B1E8D83D26F728AF001B5AD7 /* ja */,
-			);
-			name = SafariExtensionViewController.xib;
 			sourceTree = "<group>";
 		};
 		B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */ = {
