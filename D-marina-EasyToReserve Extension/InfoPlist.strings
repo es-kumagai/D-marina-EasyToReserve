@@ -1,0 +1,4 @@
+"CFBundleDisplayName" = "予約サポート for D-marina";
+"CFBundleName" = "予約サポート for D-marina";
+"NSHumanReadableDescription" = "東神奈川のレンタルボートクラブ D-marina での予約をしやすくするための Safari 機能拡張です。このツールは非公式です。";
+"NSExtension.SFSafariToolbarItem.Label" = "すべての予約状況を表示";

@@ -32,6 +32,8 @@
 		B1E8D82A26F6EC81001B5AD7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D82926F6EC81001B5AD7 /* Icon.png */; };
 		B1E8D83226F70332001B5AD7 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D83126F70332001B5AD7 /* ToolbarItemIcon.pdf */; };
 		B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D83326F70397001B5AD7 /* Toolbar Icon.afdesign */; };
+		B1E8D84226F72C73001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */; };
+		B1E8D84626F72DC2001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,15 @@
 		B1E8D83326F70397001B5AD7 /* Toolbar Icon.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Toolbar Icon.afdesign"; sourceTree = "<group>"; };
 		B1E8D83526F706D1001B5AD7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B1E8D83926F707B8001B5AD7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B1E8D83A26F70DE4001B5AD7 /* show-all-availability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "show-all-availability.png"; sourceTree = "<group>"; };
+		B1E8D83B26F70E40001B5AD7 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
+		B1E8D83C26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		B1E8D83D26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
+		B1E8D83E26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ja; path = ../ja.lproj/Main.html; sourceTree = "<group>"; };
+		B1E8D83F26F72C31001B5AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B1E8D84326F72C73001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		B1E8D84726F73BAE001B5AD7 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,12 +180,14 @@
 		B14C12B326F4EBE500CFE930 /* D-marina-EasyToReserve */ = {
 			isa = PBXGroup;
 			children = (
+				B1E8D83F26F72C31001B5AD7 /* Info.plist */,
 				B14C12B426F4EBE500CFE930 /* AppDelegate.swift */,
 				B14C12C026F4EBE500CFE930 /* ViewController.swift */,
 				B14C12C226F4EBE500CFE930 /* Main.storyboard */,
 				B14C12C526F4EBEA00CFE930 /* Assets.xcassets */,
 				B14C12C726F4EBEA00CFE930 /* D_marina_EasyToReserve.entitlements */,
 				B14C12C826F4EBEA00CFE930 /* D-marina-EasyToReserve.entitlements */,
+				B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */,
 				B14C12B626F4EBE500CFE930 /* Resources */,
 			);
 			path = "D-marina-EasyToReserve";
@@ -216,6 +229,7 @@
 				B14C12F126F4EBEB00CFE930 /* SafariExtensionViewController.xib */,
 				B14C12F426F4EBEB00CFE930 /* Info.plist */,
 				B14C12F526F4EBEB00CFE930 /* D_marina_EasyToReserve_Extension.entitlements */,
+				B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */,
 				B14C12EC26F4EBEB00CFE930 /* Resources */,
 			);
 			path = "D-marina-EasyToReserve Extension";
@@ -259,6 +273,9 @@
 			isa = PBXGroup;
 			children = (
 				B1E8D83926F707B8001B5AD7 /* Icon.png */,
+				B1E8D83A26F70DE4001B5AD7 /* show-all-availability.png */,
+				B1E8D83B26F70E40001B5AD7 /* toolbar.png */,
+				B1E8D84726F73BAE001B5AD7 /* app.png */,
 			);
 			path = README;
 			sourceTree = "<group>";
@@ -371,6 +388,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = B14C12A826F4EBE500CFE930;
 			productRefGroup = B14C12B226F4EBE500CFE930 /* Products */;
@@ -393,6 +411,7 @@
 				B14C12C426F4EBE500CFE930 /* Main.storyboard in Resources */,
 				B14C12BF26F4EBE500CFE930 /* Script.js in Resources */,
 				B1E8D82A26F6EC81001B5AD7 /* Icon.png in Resources */,
+				B1E8D84226F72C73001B5AD7 /* InfoPlist.strings in Resources */,
 				B14C12B926F4EBE500CFE930 /* Main.html in Resources */,
 				B14C12C626F4EBEA00CFE930 /* Assets.xcassets in Resources */,
 				B14C12BD26F4EBE500CFE930 /* Style.css in Resources */,
@@ -426,6 +445,7 @@
 				B14C130D26F58D6E00CFE930 /* Canvas.js in Resources */,
 				B14C130926F573B100CFE930 /* Endpoint.js in Resources */,
 				B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */,
+				B1E8D84626F72DC2001B5AD7 /* InfoPlist.strings in Resources */,
 				B1E8D83226F70332001B5AD7 /* ToolbarItemIcon.pdf in Resources */,
 				B14C12EE26F4EBEB00CFE930 /* script.js in Resources */,
 			);
@@ -494,6 +514,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B14C12B826F4EBE500CFE930 /* Base */,
+				B1E8D83E26F728AF001B5AD7 /* ja */,
 			);
 			name = Main.html;
 			sourceTree = "<group>";
@@ -502,6 +523,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B14C12C326F4EBE500CFE930 /* Base */,
+				B1E8D83C26F728AF001B5AD7 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -510,8 +532,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				B14C12F226F4EBEB00CFE930 /* Base */,
+				B1E8D83D26F728AF001B5AD7 /* ja */,
 			);
 			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+		B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1E8D84326F72C73001B5AD7 /* ja */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -521,6 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -582,6 +614,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -643,7 +676,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "EZ-NET Reservation Support Tool for D-marina";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright \U0003© Tomohiro Kumagai";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -674,7 +707,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "EZ-NET Reservation Support Tool for D-marina";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright \U0003© Tomohiro Kumagai";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -707,8 +740,10 @@
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "D-marina-EasyToReserve/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright \U0003© Tomohiro Kumagai";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -743,8 +778,10 @@
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "D-marina-EasyToReserve/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright \U0003© Tomohiro Kumagai";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -1,0 +1,36 @@
+
+/* Class = "NSMenuItem"; title = "D-marina-EasyToReserve"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "予約サポート for D-marina";
+
+/* Class = "NSMenuItem"; title = "Quit D-marina-EasyToReserve"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "予約サポートを終了";
+
+/* Class = "NSMenuItem"; title = "About D-marina-EasyToReserve"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "予約サポートについて";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "D-marina-EasyToReserve Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "予約サポートヘルプ";
+
+/* Class = "NSWindow"; title = "EZ-NET Reservation Support Tool for D-marina"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "予約サポート for D-marina";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "すべてを表示";
+
+/* Class = "NSMenuItem"; title = "Hide D-marina-EasyToReserve"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "予約サポートを非表示";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "ほかを非表示";
+
+/* Class = "NSMenu"; title = "D-marina-EasyToReserve"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "予約サポート for D-marina";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "ヘルプ";
