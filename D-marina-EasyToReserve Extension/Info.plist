@@ -4,17 +4,6 @@
 <dict>
 	<key>NSExtension</key>
 	<dict>
-		<key>SFSafariStyleSheet</key>
-		<array>
-			<dict>
-				<key>Style Sheet</key>
-				<string>styles.css</string>
-				<key>Allowed URL Patterns</key>
-				<array>
-					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
-				</array>
-			</dict>
-		</array>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.Safari.extension</string>
 		<key>NSExtensionPrincipalClass</key>
@@ -22,60 +11,71 @@
 		<key>SFSafariContentScript</key>
 		<array>
 			<dict>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
 				<key>Script</key>
 				<string>script.js</string>
+			</dict>
+			<dict>
 				<key>Allowed URL Patterns</key>
 				<array>
 					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
 				</array>
-			</dict>
-			<dict>
 				<key>Script</key>
 				<string>Canvas.js</string>
+			</dict>
+			<dict>
 				<key>Allowed URL Patterns</key>
 				<array>
 					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
 				</array>
-			</dict>
-			<dict>
 				<key>Script</key>
 				<string>Plan.js</string>
+			</dict>
+			<dict>
 				<key>Allowed URL Patterns</key>
 				<array>
 					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
 				</array>
-			</dict>
-			<dict>
 				<key>Script</key>
 				<string>Endpoint.js</string>
+			</dict>
+			<dict>
 				<key>Allowed URL Patterns</key>
 				<array>
 					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
 				</array>
-			</dict>
-			<dict>
 				<key>Script</key>
 				<string>Response.js</string>
+			</dict>
+			<dict>
 				<key>Allowed URL Patterns</key>
 				<array>
 					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
 				</array>
-			</dict>
-			<dict>
 				<key>Script</key>
 				<string>Page.js</string>
-				<key>Allowed URL Patterns</key>
-				<array>
-					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
-				</array>
 			</dict>
 			<dict>
-				<key>Script</key>
-				<string>DateComponents.js</string>
 				<key>Allowed URL Patterns</key>
 				<array>
 					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
 				</array>
+				<key>Script</key>
+				<string>DateComponents.js</string>
+			</dict>
+		</array>
+		<key>SFSafariStyleSheet</key>
+		<array>
+			<dict>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+				<key>Style Sheet</key>
+				<string>styles.css</string>
 			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
@@ -100,6 +100,6 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableDescription</key>
-	<string>This is D-marina-EasyToReserve Extension. You should tell us what your extension does here.</string>
+	<string>This is an Safari App Extension that is useful for scheduling a boat rental with D-marina. This tool is unoficcial.</string>
 </dict>
 </plist>

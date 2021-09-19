@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B14C12B526F4EBE500CFE930 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12B426F4EBE500CFE930 /* AppDelegate.swift */; };
 		B14C12B926F4EBE500CFE930 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = B14C12B726F4EBE500CFE930 /* Main.html */; };
-		B14C12BB26F4EBE500CFE930 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B14C12BA26F4EBE500CFE930 /* Icon.png */; };
 		B14C12BD26F4EBE500CFE930 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = B14C12BC26F4EBE500CFE930 /* Style.css */; };
 		B14C12BF26F4EBE500CFE930 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C12BE26F4EBE500CFE930 /* Script.js */; };
 		B14C12C126F4EBE500CFE930 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12C026F4EBE500CFE930 /* ViewController.swift */; };
@@ -22,7 +21,6 @@
 		B14C12E926F4EBEB00CFE930 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */; };
 		B14C12EB26F4EBEB00CFE930 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C12EA26F4EBEB00CFE930 /* SafariExtensionViewController.swift */; };
 		B14C12EE26F4EBEB00CFE930 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C12ED26F4EBEB00CFE930 /* script.js */; };
-		B14C12F026F4EBEB00CFE930 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B14C12EF26F4EBEB00CFE930 /* ToolbarItemIcon.pdf */; };
 		B14C12F326F4EBEB00CFE930 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14C12F126F4EBEB00CFE930 /* SafariExtensionViewController.xib */; };
 		B14C130626F570EF00CFE930 /* Plan.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C130526F570EF00CFE930 /* Plan.js */; };
 		B14C130926F573B100CFE930 /* Endpoint.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C130826F573B100CFE930 /* Endpoint.js */; };
@@ -31,6 +29,9 @@
 		B14C130F26F599BE00CFE930 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = B14C130E26F599BE00CFE930 /* styles.css */; };
 		B14C131126F5CEF300CFE930 /* Page.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C131026F5CEF300CFE930 /* Page.js */; };
 		B14C131326F5E01300CFE930 /* DateComponents.js in Resources */ = {isa = PBXBuildFile; fileRef = B14C131226F5E01300CFE930 /* DateComponents.js */; };
+		B1E8D82A26F6EC81001B5AD7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D82926F6EC81001B5AD7 /* Icon.png */; };
+		B1E8D83226F70332001B5AD7 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D83126F70332001B5AD7 /* ToolbarItemIcon.pdf */; };
+		B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D83326F70397001B5AD7 /* Toolbar Icon.afdesign */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +76,6 @@
 		B14C12B126F4EBE500CFE930 /* D-marina-EasyToReserve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D-marina-EasyToReserve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14C12B426F4EBE500CFE930 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B14C12B826F4EBE500CFE930 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
-		B14C12BA26F4EBE500CFE930 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B14C12BC26F4EBE500CFE930 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
 		B14C12BE26F4EBE500CFE930 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
 		B14C12C026F4EBE500CFE930 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +92,6 @@
 		B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		B14C12EA26F4EBEB00CFE930 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		B14C12ED26F4EBEB00CFE930 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
-		B14C12EF26F4EBEB00CFE930 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		B14C12F226F4EBEB00CFE930 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		B14C12F426F4EBEB00CFE930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B14C12F526F4EBEB00CFE930 /* D_marina_EasyToReserve_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = D_marina_EasyToReserve_Extension.entitlements; sourceTree = "<group>"; };
@@ -103,6 +102,12 @@
 		B14C130E26F599BE00CFE930 /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
 		B14C131026F5CEF300CFE930 /* Page.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Page.js; sourceTree = "<group>"; };
 		B14C131226F5E01300CFE930 /* DateComponents.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = DateComponents.js; sourceTree = "<group>"; };
+		B1E8D82626F6EAFB001B5AD7 /* App Icon.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = "App Icon.afdesign"; sourceTree = "<group>"; };
+		B1E8D82926F6EC81001B5AD7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B1E8D83126F70332001B5AD7 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		B1E8D83326F70397001B5AD7 /* Toolbar Icon.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Toolbar Icon.afdesign"; sourceTree = "<group>"; };
+		B1E8D83526F706D1001B5AD7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B1E8D83926F707B8001B5AD7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +145,8 @@
 		B14C12A826F4EBE500CFE930 = {
 			isa = PBXGroup;
 			children = (
+				B1E8D83526F706D1001B5AD7 /* README.md */,
+				B1E8D82526F6E374001B5AD7 /* Resources */,
 				B14C12B326F4EBE500CFE930 /* D-marina-EasyToReserve */,
 				B14C12E726F4EBEB00CFE930 /* D-marina-EasyToReserve Extension */,
 				B14C12D026F4EBEB00CFE930 /* D-marina-EasyToReserveTests */,
@@ -177,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				B14C12B726F4EBE500CFE930 /* Main.html */,
-				B14C12BA26F4EBE500CFE930 /* Icon.png */,
+				B1E8D82926F6EC81001B5AD7 /* Icon.png */,
 				B14C12BC26F4EBE500CFE930 /* Style.css */,
 				B14C12BE26F4EBE500CFE930 /* Script.js */,
 			);
@@ -219,7 +226,7 @@
 			children = (
 				B14C130726F571B700CFE930 /* D-marina */,
 				B14C12ED26F4EBEB00CFE930 /* script.js */,
-				B14C12EF26F4EBEB00CFE930 /* ToolbarItemIcon.pdf */,
+				B1E8D83126F70332001B5AD7 /* ToolbarItemIcon.pdf */,
 				B14C130E26F599BE00CFE930 /* styles.css */,
 			);
 			path = Resources;
@@ -236,6 +243,24 @@
 				B14C131226F5E01300CFE930 /* DateComponents.js */,
 			);
 			path = "D-marina";
+			sourceTree = "<group>";
+		};
+		B1E8D82526F6E374001B5AD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8D83826F7072A001B5AD7 /* README */,
+				B1E8D83326F70397001B5AD7 /* Toolbar Icon.afdesign */,
+				B1E8D82626F6EAFB001B5AD7 /* App Icon.afdesign */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1E8D83826F7072A001B5AD7 /* README */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8D83926F707B8001B5AD7 /* Icon.png */,
+			);
+			path = README;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,9 +390,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B14C12BB26F4EBE500CFE930 /* Icon.png in Resources */,
 				B14C12C426F4EBE500CFE930 /* Main.storyboard in Resources */,
 				B14C12BF26F4EBE500CFE930 /* Script.js in Resources */,
+				B1E8D82A26F6EC81001B5AD7 /* Icon.png in Resources */,
 				B14C12B926F4EBE500CFE930 /* Main.html in Resources */,
 				B14C12C626F4EBEA00CFE930 /* Assets.xcassets in Resources */,
 				B14C12BD26F4EBE500CFE930 /* Style.css in Resources */,
@@ -398,9 +423,10 @@
 				B14C130B26F57EC300CFE930 /* Response.js in Resources */,
 				B14C131126F5CEF300CFE930 /* Page.js in Resources */,
 				B14C12F326F4EBEB00CFE930 /* SafariExtensionViewController.xib in Resources */,
-				B14C12F026F4EBEB00CFE930 /* ToolbarItemIcon.pdf in Resources */,
 				B14C130D26F58D6E00CFE930 /* Canvas.js in Resources */,
 				B14C130926F573B100CFE930 /* Endpoint.js in Resources */,
+				B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */,
+				B1E8D83226F70332001B5AD7 /* ToolbarItemIcon.pdf in Resources */,
 				B14C12EE26F4EBEB00CFE930 /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +642,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "D-marina Easy to Reserve Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "EZ-NET Reservation Support Tool for D-marina";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -647,7 +673,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "D-marina Easy to Reserve Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "EZ-NET Reservation Support Tool for D-marina";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

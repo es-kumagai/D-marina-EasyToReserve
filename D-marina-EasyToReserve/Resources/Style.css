@@ -20,7 +20,6 @@ body {
     justify-content: center;
     flex-direction: column;
 
-    gap: var(--spacing);
     margin: 0 calc(var(--spacing) * 2);
     height: 100%;
 
@@ -38,6 +37,11 @@ body.state-on :is(.state-off, .state-unknown) {
 
 body.state-off :is(.state-on, .state-unknown) {
     display: none;
+}
+
+h1 {
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 button {
