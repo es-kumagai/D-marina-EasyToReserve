@@ -44,12 +44,10 @@ class Canvas {
         
         const maker = new NodeMaker('aside', 'navigator', Canvas.navigatorId);
         const buttonsMaker = new NodeMaker('div', 'buttons');
-        const buttonMaker = new NodeMaker('button', 'move-to-canvas');
-    
-        buttonMaker.appendText('空き状況の一覧にもどる');
-        buttonMaker.setAttribute('onclick', 'window.scrollTo({top:0,left:0,behavior:\'smooth\'});');
         
-        buttonsMaker.appendNode(buttonMaker.node);
+        buttonsMaker.appendButton('空き状況の一覧にもどる', 'window.scrollTo({top:0,left:0,behavior:\'smooth\'});', 'move-to-canvas');
+        buttonsMaker.appendButton('空き状況の一覧を非表示', 'document.dispatchEvent(new CustomEvent(\'HIDE_CANVAS\'));');
+        
         maker.appendNode(buttonsMaker.node);
 
         this.mainNode.appendChild(maker.node);

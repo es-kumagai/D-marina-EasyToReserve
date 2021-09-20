@@ -39,6 +39,7 @@
 		B1E8D85526F76262001B5AD7 /* Boat.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85426F76262001B5AD7 /* Boat.js */; };
 		B1E8D85726F76266001B5AD7 /* Course.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85626F76266001B5AD7 /* Course.js */; };
 		B1E8D85A26F80E33001B5AD7 /* Debug.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85926F80E33001B5AD7 /* Debug.js */; };
+		B1E8D85C26F81FF4001B5AD7 /* NodeMaker.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85B26F81FF4001B5AD7 /* NodeMaker.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		B1E8D85626F76266001B5AD7 /* Course.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Course.js; sourceTree = "<group>"; };
 		B1E8D85826F792D4001B5AD7 /* show-all-availability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "show-all-availability.png"; sourceTree = "<group>"; };
 		B1E8D85926F80E33001B5AD7 /* Debug.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Debug.js; sourceTree = "<group>"; };
+		B1E8D85B26F81FF4001B5AD7 /* NodeMaker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NodeMaker.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				B14C131226F5E01300CFE930 /* DateComponents.js */,
 				B1E8D85926F80E33001B5AD7 /* Debug.js */,
 				B14C130826F573B100CFE930 /* Endpoint.js */,
+				B1E8D85B26F81FF4001B5AD7 /* NodeMaker.js */,
 				B14C131026F5CEF300CFE930 /* Page.js */,
 				B14C130526F570EF00CFE930 /* Plan.js */,
 				B1E8D84E26F761AC001B5AD7 /* PlanCanvas.js */,
@@ -455,6 +458,7 @@
 				B1E8D85A26F80E33001B5AD7 /* Debug.js in Resources */,
 				B14C130626F570EF00CFE930 /* Plan.js in Resources */,
 				B1E8D85326F76230001B5AD7 /* StateIterator.js in Resources */,
+				B1E8D85C26F81FF4001B5AD7 /* NodeMaker.js in Resources */,
 				B14C130F26F599BE00CFE930 /* styles.css in Resources */,
 				B14C130B26F57EC300CFE930 /* Response.js in Resources */,
 				B14C131126F5CEF300CFE930 /* Page.js in Resources */,

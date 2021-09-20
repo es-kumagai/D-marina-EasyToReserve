@@ -116,6 +116,14 @@
 				<key>Script</key>
 				<string>Course.js</string>
 			</dict>
+			<dict>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+				<key>Script</key>
+				<string>NodeMaker.js</string>
+			</dict>
 		</array>
 		<key>SFSafariStyleSheet</key>
 		<array>

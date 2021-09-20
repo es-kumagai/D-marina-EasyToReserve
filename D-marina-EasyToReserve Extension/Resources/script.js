@@ -11,6 +11,11 @@ document.addEventListener('UPDATE_AVAILABILITIES', (event) => {
     updateAvailabilities(startDate, baseDate);
 });
 
+document.addEventListener('HIDE_CANVAS', (event) => {
+
+    removeCanvas();
+});
+
 document.addEventListener('MOVE_TO_CALENDAR', (event) => {
     
     const canvasNode = getCanvasNode();
@@ -53,7 +58,7 @@ safari.self.addEventListener('message', (event) => {
 function resizeMainNode() {
     
     const canvasNode = getCanvasNode();
-    let canvasWidth = 0;
+    let canvasWidth = '0px';
     
     if (canvasNode) {
 
