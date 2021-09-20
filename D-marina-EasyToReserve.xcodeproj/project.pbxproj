@@ -597,7 +597,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -663,7 +663,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -696,7 +696,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
+				INFOPLIST_KEY_CFBundleDisplayName = "Booking Support for D-marina";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -725,7 +725,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
+				INFOPLIST_KEY_CFBundleDisplayName = "Booking Support for D-marina";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -758,7 +758,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
+				INFOPLIST_KEY_CFBundleDisplayName = "Booking Support for D-marina";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -794,7 +794,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Reservation Support for D-marina";
+				INFOPLIST_KEY_CFBundleDisplayName = "Booking Support for D-marina";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
