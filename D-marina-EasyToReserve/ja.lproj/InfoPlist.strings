@@ -1,11 +1,4 @@
-/* 
-  Localizable.strings
-  D-marina-EasyToReserve
-
-  Created by Tomohiro Kumagai on 2021/09/19.
-  
-*/
+/* Localized versions of Info.plist keys */
 
 "CFBundleDisplayName" = "予約サポート for D-marina";
 "CFBundleName" = "予約サポート for D-marina";
-CFBundleExecutable = "予約サポート for D-marina";

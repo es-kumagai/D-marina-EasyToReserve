@@ -30,8 +30,6 @@
 		B1E8D82A26F6EC81001B5AD7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D82926F6EC81001B5AD7 /* Icon.png */; };
 		B1E8D83226F70332001B5AD7 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D83126F70332001B5AD7 /* ToolbarItemIcon.pdf */; };
 		B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D83326F70397001B5AD7 /* Toolbar Icon.afdesign */; };
-		B1E8D84226F72C73001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */; };
-		B1E8D84626F72DC2001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */; };
 		B1E8D84D26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84C26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf */; };
 		B1E8D84F26F761AC001B5AD7 /* PlanCanvas.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D84E26F761AC001B5AD7 /* PlanCanvas.js */; };
 		B1E8D85126F76203001B5AD7 /* State.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85026F76203001B5AD7 /* State.js */; };
@@ -40,6 +38,8 @@
 		B1E8D85726F76266001B5AD7 /* Course.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85626F76266001B5AD7 /* Course.js */; };
 		B1E8D85A26F80E33001B5AD7 /* Debug.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85926F80E33001B5AD7 /* Debug.js */; };
 		B1E8D85C26F81FF4001B5AD7 /* NodeMaker.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85B26F81FF4001B5AD7 /* NodeMaker.js */; };
+		B1E8D86226F8F15D001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D86426F8F15D001B5AD7 /* InfoPlist.strings */; };
+		B1E8D86E26F8F462001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D86C26F8F40C001B5AD7 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,8 +118,6 @@
 		B1E8D83C26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		B1E8D83E26F728AF001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ja; path = ../ja.lproj/Main.html; sourceTree = "<group>"; };
 		B1E8D83F26F72C31001B5AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		B1E8D84326F72C73001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B1E8D84726F73BAE001B5AD7 /* app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app.png; sourceTree = "<group>"; };
 		B1E8D84C26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ToolbarItemIcon-Beta.pdf"; sourceTree = "<group>"; };
 		B1E8D84E26F761AC001B5AD7 /* PlanCanvas.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = PlanCanvas.js; sourceTree = "<group>"; };
@@ -130,6 +128,10 @@
 		B1E8D85826F792D4001B5AD7 /* show-all-availability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "show-all-availability.png"; sourceTree = "<group>"; };
 		B1E8D85926F80E33001B5AD7 /* Debug.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Debug.js; sourceTree = "<group>"; };
 		B1E8D85B26F81FF4001B5AD7 /* NodeMaker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NodeMaker.js; sourceTree = "<group>"; };
+		B1E8D86326F8F15D001B5AD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1E8D86526F8F15F001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1E8D86B26F8F40C001B5AD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1E8D86D26F8F40E001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +200,7 @@
 				B14C12C526F4EBEA00CFE930 /* Assets.xcassets */,
 				B14C12C726F4EBEA00CFE930 /* D_marina_EasyToReserve.entitlements */,
 				B14C12C826F4EBEA00CFE930 /* D-marina-EasyToReserve.entitlements */,
-				B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */,
+				B1E8D86C26F8F40C001B5AD7 /* InfoPlist.strings */,
 				B14C12B626F4EBE500CFE930 /* Resources */,
 			);
 			path = "D-marina-EasyToReserve";
@@ -238,7 +240,7 @@
 				B14C12E826F4EBEB00CFE930 /* SafariExtensionHandler.swift */,
 				B14C12F426F4EBEB00CFE930 /* Info.plist */,
 				B14C12F526F4EBEB00CFE930 /* D_marina_EasyToReserve_Extension.entitlements */,
-				B1E8D84526F72DC2001B5AD7 /* InfoPlist.strings */,
+				B1E8D86426F8F15D001B5AD7 /* InfoPlist.strings */,
 				B14C12EC26F4EBEB00CFE930 /* Resources */,
 			);
 			path = "D-marina-EasyToReserve Extension";
@@ -426,9 +428,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14C12C426F4EBE500CFE930 /* Main.storyboard in Resources */,
+				B1E8D86E26F8F462001B5AD7 /* InfoPlist.strings in Resources */,
 				B14C12BF26F4EBE500CFE930 /* Script.js in Resources */,
 				B1E8D82A26F6EC81001B5AD7 /* Icon.png in Resources */,
-				B1E8D84226F72C73001B5AD7 /* InfoPlist.strings in Resources */,
 				B14C12B926F4EBE500CFE930 /* Main.html in Resources */,
 				B14C12C626F4EBEA00CFE930 /* Assets.xcassets in Resources */,
 				B14C12BD26F4EBE500CFE930 /* Style.css in Resources */,
@@ -468,7 +470,7 @@
 				B14C130926F573B100CFE930 /* Endpoint.js in Resources */,
 				B1E8D84F26F761AC001B5AD7 /* PlanCanvas.js in Resources */,
 				B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */,
-				B1E8D84626F72DC2001B5AD7 /* InfoPlist.strings in Resources */,
+				B1E8D86226F8F15D001B5AD7 /* InfoPlist.strings in Resources */,
 				B1E8D83226F70332001B5AD7 /* ToolbarItemIcon.pdf in Resources */,
 				B1E8D85126F76203001B5AD7 /* State.js in Resources */,
 				B14C12EE26F4EBEB00CFE930 /* script.js in Resources */,
@@ -551,10 +553,20 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B1E8D84426F72C73001B5AD7 /* InfoPlist.strings */ = {
+		B1E8D86426F8F15D001B5AD7 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B1E8D84326F72C73001B5AD7 /* ja */,
+				B1E8D86326F8F15D001B5AD7 /* en */,
+				B1E8D86526F8F15F001B5AD7 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B1E8D86C26F8F40C001B5AD7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1E8D86B26F8F40C001B5AD7 /* en */,
+				B1E8D86D26F8F40E001B5AD7 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -696,7 +708,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Booking Support for D-marina";
+				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -725,7 +737,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Booking Support for D-marina";
+				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -758,9 +770,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Booking Support for D-marina";
+				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright © Tomohiro Kumagai";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -794,9 +806,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "D-marina-EasyToReserve/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Booking Support for D-marina";
+				INFOPLIST_KEY_CFBundleDisplayName = "D-marina-EasyToReserve";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "$(ES_COPYRIGHT)";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2021 Copyright © Tomohiro Kumagai";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (

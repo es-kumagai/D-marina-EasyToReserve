@@ -1,0 +1,4 @@
+"CFBundleDisplayName" = "Booking Support for D-marina";
+"CFBundleName" = "Booking Support for D-marina";
+"NSHumanReadableDescription" = "This is an Safari App Extension that is useful for scheduling a boat rental with D-marina. This tool is unoficcial.";
+"NSExtension.SFSafariToolbarItem.Label" = "Show All Availabilities";
