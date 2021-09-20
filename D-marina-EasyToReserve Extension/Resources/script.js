@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener('DOMContentLoaded', function(event) {
     
     removeCanvas();
 });
 
-document.addEventListener("UPDATE_AVAILABILITIES", (event) => {
+document.addEventListener('UPDATE_AVAILABILITIES', (event) => {
    
     const startDate = new DateComponents(String(event.detail['selectedDate']));
     const baseDate = new DateComponents(String(event.detail['baseDate']));
@@ -11,10 +11,10 @@ document.addEventListener("UPDATE_AVAILABILITIES", (event) => {
     updateAvailabilities(startDate, baseDate);
 });
 
-document.addEventListener("MOVE_TO_CALENDAR", (event) => {
+document.addEventListener('MOVE_TO_CALENDAR', (event) => {
     
-    const canvasNode = document.getElementById(Canvas.id);
-    const calendarNode = document.getElementById('calendar');
+    const canvasNode = getCanvasNode();
+    const calendarNode = getCalendarNode();
     
     const x = canvasNode.clientLeft + canvasNode.clientWidth - 300;
     const y = calendarNode.offsetTop - 300;
@@ -26,6 +26,21 @@ document.addEventListener("MOVE_TO_CALENDAR", (event) => {
     });
 });
 
+document.addEventListener('CANVAS_DID_UPDATE', (event) => {
+
+    resizeMainNode();
+});
+
+document.addEventListener('CANVAS_DID_REMOVE', (event) => {
+    
+    resizeMainNode();
+});
+
+window.addEventListener('resize', (event) => {
+
+    resizeMainNode();
+});
+
 safari.self.addEventListener('message', (event) => {
     
     switch (event.name) {
@@ -35,13 +50,78 @@ safari.self.addEventListener('message', (event) => {
     }
 });
 
-function removeCanvas() {
-
-    const canvasNode = document.getElementById(Canvas.id);
+function resizeMainNode() {
+    
+    const canvasNode = getCanvasNode();
+    let canvasWidth = 0;
     
     if (canvasNode) {
+
+        const styles = window.getComputedStyle(canvasNode);
+        const marginLeft = styles.getPropertyValue('margin-left');
+        const marginRight = styles.getPropertyValue('margin-right');
         
+        canvasWidth = `${canvasNode.offsetWidth}px + ${marginLeft} + ${marginRight}`;
+    }
+
+    const rootNode = getRootNode();
+    const mainNode = getMainNode();
+
+    const rootWidth = `${rootNode.clientWidth}px`;
+    const width = `calc(${rootWidth} - (${canvasWidth}))`;
+    
+    mainNode.style.width = width;
+}
+
+function getRootNode() {
+
+    return document.body;
+}
+
+function getMainNode() {
+    
+    return document.getElementById('container-iframe');
+}
+
+function getCalendarNode() {
+    
+    return document.getElementById('calendar');
+}
+
+function getCanvasNode() {
+
+    return document.getElementById(Canvas.id);
+}
+
+function getNavigatorNode() {
+
+    return document.getElementById(Canvas.navigatorId);
+}
+
+function dispatchEvent(name, detail = undefined) {
+
+    let event = undefined;
+    
+    if (detail) {
+
+        event = new CustomEvent(name, { detail : detail });
+    }
+    else {
+        
+        event = new CustomEvent(name);
+    }
+    
+    document.dispatchEvent(event);
+}
+
+function removeCanvas() {
+
+    const canvasNode = getCanvasNode();
+    
+    if (canvasNode) {
+    
         canvasNode.remove();
+        dispatchEvent('CANVAS_DID_REMOVE');
     }
 }
 
@@ -71,19 +151,15 @@ async function updateAvailabilities(startDate, baseDate) {
     
     for (const course of page.courses) {
 
-        const maker = new NodeMaker('span', 'calendar-buttons');
-        
-        maker.appendNode(canvas.calendarMoveBaseDateNode);
-        maker.appendNode(canvas.calendarMoveNextWeekNode);
-        maker.appendNode(canvas.calendarMoveNextMonthNode);
-
-        canvas.makeCourseNode(course, maker.node);
+        canvas.makeCourseNode(course, canvas.calendarMovesNode);
         
         for (const boat of page.boats) {
 
             const response = await requestPlan(startDate, boat, course);
             
             canvas.appendPlanCanvas(new PlanCanvas(canvas, response));
+            
+            dispatchEvent('CANVAS_DID_UPDATE');
         }
     }
 }

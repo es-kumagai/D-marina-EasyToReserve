@@ -1,6 +1,9 @@
+:root {
+
+}
+
 body {
     
-    overflow-x: scroll;
     white-space: nowrap;
 }
 
@@ -8,7 +11,23 @@ body {
     
     display: inline-block;
     vertical-align: top;
-    width: auto !important;
+}
+
+#debug-output {
+    
+    white-space: normal;
+    box-sizing: content-box;
+}
+
+#debug-output .message-part {
+    
+    background-color: #d7cf3a;
+    padding: 2pt 4pt;
+}
+
+#debug-output .message-part + .message-part {
+
+    margin-left: 4pt;
 }
 
 #easytoreserve-canvas {

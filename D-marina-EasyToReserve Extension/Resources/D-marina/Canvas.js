@@ -15,17 +15,22 @@ class Canvas {
 
     get rootNode() {
     
-        return document.body;
+        return getRootNode();
     }
     
     get mainNode() {
-        
-        return document.getElementById('container-iframe');
+
+        return getMainNode();
     }
 
-    get navigatorNode() {
+    get canvasNode() {
     
-        return document.getElementById(Canvas.navigatorId);
+        return getCanvasNode();
+    }
+    
+    get navigatorNode() {
+
+        return getNavigatorNode();
     }
     
     makeNavigatorNode() {
@@ -77,6 +82,17 @@ class Canvas {
         return maker.node;
     }
 
+    get calendarMovesNode() {
+        
+        const maker = new NodeMaker('span', 'calendar-buttons');
+        
+        maker.appendNode(this.calendarMoveBaseDateNode);
+        maker.appendNode(this.calendarMoveNextWeekNode);
+        maker.appendNode(this.calendarMoveNextMonthNode);
+        
+        return maker.node;
+    }
+    
     get calendarMoveBaseDateNode() {
     
         return this.calendarMoveNodeTo(this.baseDate, '直近の状況');
