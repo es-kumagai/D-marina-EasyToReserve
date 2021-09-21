@@ -40,6 +40,8 @@
 		B1E8D85C26F81FF4001B5AD7 /* NodeMaker.js in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D85B26F81FF4001B5AD7 /* NodeMaker.js */; };
 		B1E8D86226F8F15D001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D86426F8F15D001B5AD7 /* InfoPlist.strings */; };
 		B1E8D86E26F8F462001B5AD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D86C26F8F40C001B5AD7 /* InfoPlist.strings */; };
+		B1E8D8AF26F9B023001B5AD7 /* Calendar.css in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D8AE26F9B023001B5AD7 /* Calendar.css */; };
+		B1E8D8B226F9B0E8001B5AD7 /* Navigator.css in Resources */ = {isa = PBXBuildFile; fileRef = B1E8D8B126F9B0E8001B5AD7 /* Navigator.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		B1E8D86526F8F15F001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1E8D86B26F8F40C001B5AD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1E8D86D26F8F40E001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1E8D8AE26F9B023001B5AD7 /* Calendar.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Calendar.css; sourceTree = "<group>"; };
+		B1E8D8B126F9B0E8001B5AD7 /* Navigator.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Navigator.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,11 +253,11 @@
 		B14C12EC26F4EBEB00CFE930 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B1E8D8AD26F9AFF6001B5AD7 /* StyleSheets */,
 				B14C130726F571B700CFE930 /* D-marina */,
 				B14C12ED26F4EBEB00CFE930 /* script.js */,
 				B1E8D83126F70332001B5AD7 /* ToolbarItemIcon.pdf */,
 				B1E8D84C26F75495001B5AD7 /* ToolbarItemIcon-Beta.pdf */,
-				B14C130E26F599BE00CFE930 /* styles.css */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -297,6 +301,16 @@
 				B1E8D83B26F70E40001B5AD7 /* toolbar.png */,
 			);
 			path = README;
+			sourceTree = "<group>";
+		};
+		B1E8D8AD26F9AFF6001B5AD7 /* StyleSheets */ = {
+			isa = PBXGroup;
+			children = (
+				B14C130E26F599BE00CFE930 /* styles.css */,
+				B1E8D8AE26F9B023001B5AD7 /* Calendar.css */,
+				B1E8D8B126F9B0E8001B5AD7 /* Navigator.css */,
+			);
+			path = StyleSheets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14C131326F5E01300CFE930 /* DateComponents.js in Resources */,
+				B1E8D8AF26F9B023001B5AD7 /* Calendar.css in Resources */,
 				B1E8D85726F76266001B5AD7 /* Course.js in Resources */,
 				B1E8D85A26F80E33001B5AD7 /* Debug.js in Resources */,
 				B14C130626F570EF00CFE930 /* Plan.js in Resources */,
@@ -471,6 +486,7 @@
 				B1E8D84F26F761AC001B5AD7 /* PlanCanvas.js in Resources */,
 				B1E8D83426F70397001B5AD7 /* Toolbar Icon.afdesign in Resources */,
 				B1E8D86226F8F15D001B5AD7 /* InfoPlist.strings in Resources */,
+				B1E8D8B226F9B0E8001B5AD7 /* Navigator.css in Resources */,
 				B1E8D83226F70332001B5AD7 /* ToolbarItemIcon.pdf in Resources */,
 				B1E8D85126F76203001B5AD7 /* State.js in Resources */,
 				B14C12EE26F4EBEB00CFE930 /* script.js in Resources */,

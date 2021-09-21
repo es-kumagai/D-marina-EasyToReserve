@@ -1,0 +1,19 @@
+#calendar {
+    
+}
+
+#calendar table tbody th, #calendar table tbody td {
+
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 0px;
+}
+
+#calendar table tbody td {
+
+}
+
+#calendar table tbody th:nth-child(1) {
+    
+}

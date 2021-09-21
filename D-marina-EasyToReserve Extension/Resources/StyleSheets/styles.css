@@ -11,6 +11,7 @@ body {
     
     display: inline-block;
     vertical-align: top;
+    min-width: 500px;
 }
 
 #debug-output {
@@ -37,19 +38,6 @@ body {
     margin: 12pt !important;
     background-color: white;
     white-space: nowrap;
-}
-
-#easytoreserve-canvas-navigator {
-    
-    border-top: 1px solid #f0e68c;
-    margin: 12pt;
-    padding-top: 8pt;
-}
-
-#easytoreserve-canvas-navigator .buttons {
-
-    background-color: #f0e68c;
-    padding: 8pt !important;
 }
 
 div.canvas h1.course {
@@ -231,12 +219,6 @@ div.canvas .availability-invalid {
 }
 
 div.canvas .calendar-buttons button {
-    
-    padding: 4pt 8pt;
-    cursor: pointer;
-}
-
-aside.navigator button {
     
     padding: 4pt 8pt;
     cursor: pointer;

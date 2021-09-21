@@ -1,0 +1,18 @@
+#easytoreserve-canvas-navigator {
+    
+    border-top: 1px solid #f0e68c;
+    margin: 12pt;
+    padding-top: 8pt;
+}
+
+#easytoreserve-canvas-navigator .buttons {
+
+    background-color: #f0e68c;
+    padding: 8pt !important;
+}
+
+#easytoreserve-canvas-navigator button {
+    
+    padding: 4pt 8pt;
+    cursor: pointer;
+}

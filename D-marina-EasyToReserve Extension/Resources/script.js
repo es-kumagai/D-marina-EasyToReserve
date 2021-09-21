@@ -31,9 +31,13 @@ document.addEventListener('MOVE_TO_CALENDAR', (event) => {
     });
 });
 
-document.addEventListener('CANVAS_DID_UPDATE', (event) => {
+document.addEventListener('CANVAS_PLAN_DID_UPDATE', (event) => {
 
     resizeMainNode();
+});
+
+document.addEventListener('CANVAS_ALL_PLANS_DID_UPDATE', (event) => {
+
 });
 
 document.addEventListener('CANVAS_DID_REMOVE', (event) => {
@@ -130,6 +134,16 @@ function removeCanvas() {
     }
 }
 
+function removeSpecifiedWidthFromCalendadrDaysNode() {
+    
+    const daysNode = document.getElementById('scroll30');
+    
+    if (daysNode) {
+        
+        daysNode.style.width = '';
+    }
+}
+
 function receiveRequestAvailabilityOfAllReservationsMessage() {
     
     const page = new Page();
@@ -149,6 +163,7 @@ async function updateAvailabilities(startDate, baseDate) {
     }
     
     removeCanvas();
+    removeSpecifiedWidthFromCalendadrDaysNode();
     
     const canvas = new Canvas(page, startDate, baseDate);
 
@@ -163,10 +178,11 @@ async function updateAvailabilities(startDate, baseDate) {
             const response = await requestPlan(startDate, boat, course);
             
             canvas.appendPlanCanvas(new PlanCanvas(canvas, response));
-            
-            dispatchEvent('CANVAS_DID_UPDATE');
+            dispatchEvent('CANVAS_PLAN_DID_UPDATE');
         }
     }
+
+    dispatchEvent('CANVAS_ALL_PLANS_DID_UPDATE');
 }
 
 function requestPlan(startDate, boat, course) {

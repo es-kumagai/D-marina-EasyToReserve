@@ -135,6 +135,22 @@
 				<key>Style Sheet</key>
 				<string>styles.css</string>
 			</dict>
+			<dict>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+				<key>Style Sheet</key>
+				<string>Calendar.css</string>
+			</dict>
+			<dict>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://d-marina.resv.jp/reserve/calendar.php</string>
+				</array>
+				<key>Style Sheet</key>
+				<string>Navigator.css</string>
+			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
 		<dict>
