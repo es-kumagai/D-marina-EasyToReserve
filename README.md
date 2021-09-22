@@ -6,7 +6,7 @@
 <a href="https://apps.apple.com/jp/app/id1586571019?mt=12"><img src="Resources/README/Download_on_the_App_Store_Badge.135x40.png" width="135px"/></a>
 </div>
 
-<div style="padding-left: 160px; padding-top: 0pt;">
+<div style="padding-left: 160px; padding-top: 0pt; margin-top: 12px;">
 <p>東神奈川のレンタルボートクラブ <a href="http://www.daruma-marine.com">D-marina</a> での予約をしやすくするための Safari 機能拡張です。</p>
 <p>これを使うと、D-marina の <a href="https://d-marina.resv.jp/reserve/calendar.php?x=1522390798">予約ページ</a> で全てのレンタルボートにおける空き状況を確認できるので、たとえば友人を誘い合わせてレンタルボートを借りたいときに、日程を優先してその日に空いているボートを選ぶみたいな借り方がしやすくなります。</p>
 </div>
