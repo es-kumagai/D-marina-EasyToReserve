@@ -1,10 +1,19 @@
 # 予約サポート for D-marina.
 
-![D-marina-EasyToReserve](Resources/README/Icon.png)
+<div style="float: left; text-align: center;">
+<a href="https://apps.apple.com/jp/app/id1586571019?mt=12"><img src="Resources/README/Icon.png" width="100px"></a>
+<br/>
+<a href="https://apps.apple.com/jp/app/id1586571019?mt=12"><img src="Resources/README/Download_on_the_App_Store_Badge.135x40.png" width="135px"/></a>
+</div>
 
-東神奈川のレンタルボートクラブ [D-marina](http://www.daruma-marine.com) での予約をしやすくするための Safari 機能拡張です。
+<div style="padding-left: 160px; padding-top: 0pt;">
+<p>東神奈川のレンタルボートクラブ <a href="http://www.daruma-marine.com">D-marina</a> での予約をしやすくするための Safari 機能拡張です。</p>
+<p>これを使うと、D-marina の <a href="https://d-marina.resv.jp/reserve/calendar.php?x=1522390798">予約ページ</a> で全てのレンタルボートにおける空き状況を確認できるので、たとえば友人を誘い合わせてレンタルボートを借りたいときに、日程を優先してその日に空いているボートを選ぶみたいな借り方がしやすくなります。</p>
+</div>
 
-これを使うと、D-marina の [予約ページ](https://d-marina.resv.jp/reserve/calendar.php?x=1522390798) で全てのレンタルボートにおける空き状況を確認できるので、たとえば友人を誘い合わせてレンタルボートを借りたいときに、日程を優先してその日に空いているボートを選ぶみたいな借り方がしやすくなります。
+</div>
+
+<br clear="all"/>
 
 ![show-all-availability](Resources/README/show-all-availability.png)
 

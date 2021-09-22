@@ -136,6 +136,7 @@
 		B1E8D86D26F8F40E001B5AD7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1E8D8AE26F9B023001B5AD7 /* Calendar.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Calendar.css; sourceTree = "<group>"; };
 		B1E8D8B126F9B0E8001B5AD7 /* Navigator.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Navigator.css; sourceTree = "<group>"; };
+		B1E8D8B326FAFC8E001B5AD7 /* Download_on_the_App_Store_Badge.135x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Download_on_the_App_Store_Badge.135x40.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E8D84726F73BAE001B5AD7 /* app.png */,
+				B1E8D8B326FAFC8E001B5AD7 /* Download_on_the_App_Store_Badge.135x40.png */,
 				B1E8D83926F707B8001B5AD7 /* Icon.png */,
 				B1E8D85826F792D4001B5AD7 /* show-all-availability.png */,
 				B1E8D83B26F70E40001B5AD7 /* toolbar.png */,
