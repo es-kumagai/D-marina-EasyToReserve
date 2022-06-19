@@ -106,7 +106,7 @@ class PlanCanvas {
             
             if (state.availabilityKind === State.valid) {
 
-                classNames.push('selectable');
+                classNames.push('canvas-selectable');
                 attributes['href'] = 'void(0)';
                 attributes['onclick'] = `selectMainPlan(${this.boat.id}); selectSubPlan(${this.course.id}); document.dispatchEvent(new CustomEvent('MOVE_TO_CALENDAR'));`;
             }
