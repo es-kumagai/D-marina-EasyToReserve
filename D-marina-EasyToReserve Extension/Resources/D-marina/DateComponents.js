@@ -26,9 +26,9 @@ class DateComponents {
     
     get text() {
     
-        const year = ("0000" + this.year).substr(-4);
-        const month = ("00" + this.month).substr(-2);
-        const day = ("00" + this.day).substr(-2);
+        const year = this.year.toString();
+        const month = this.month.toString().padStart(2, '0');
+        const day = this.day.toString().padStart(2, '0');
         
         return `${year}${month}${day}`;
     }
