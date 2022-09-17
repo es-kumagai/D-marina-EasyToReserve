@@ -6,13 +6,29 @@
 //
 
 import SafariServices
+import HolidaysInJapan
 
-class SafariExtensionHandler: SFSafariExtensionHandler {
+final class SafariExtensionHandler: SFSafariExtensionHandler {
     
+    let holidaysMessageName = "holidays"
+    let jsonEncoder = JSONEncoder()
+    
+    @MainActor
+    var holidays: Holidays = []
+    
+    @MainActor
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
-        // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
-        page.getPropertiesWithCompletionHandler { properties in
 
+        switch messageName {
+
+        case "prepare-holidays":
+            requestHolidays(in: page, needsResponse: false)
+
+        case "request-holidays":
+            requestHolidays(in: page, needsResponse: true)
+            
+        default:
+            break;
         }
     }
 
@@ -52,6 +68,52 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 }
 
 extension SafariExtensionHandler {
+    
+    @MainActor
+    func requestHolidays(in page: SFSafariPage, needsResponse: Bool) {
+
+        Task {
+            
+            do {
+
+                if holidays.isEmpty {
+                    
+                    let today = Holiday.Date()
+                    
+                    holidays = try await Holidays.getHolidaysInJapanAsync().filter {
+                        
+                        $0.date >= today
+                    }
+                }
+                
+                if needsResponse {
+
+                    let json: String
+                    
+                    defer {
+                        
+                        page.dispatchMessageToScript(withName: holidaysMessageName, userInfo: [
+                            "holidays" : json
+                        ])
+                    }
+                    
+                    do {
+                        json = try String(data: jsonEncoder
+                            .encode(holidays), encoding: .utf8)!
+                    }
+                    catch {
+                        
+                        json = "[]"
+                        throw error
+                    }
+                }
+            }
+            catch {
+                
+                NSLog("Failed to get holidays: \(error.localizedDescription)")
+            }
+        }
+    }
     
     func requestAvailabilityOfAllReservations(in window: SFSafariWindow) {
         

@@ -44,6 +44,30 @@ class PlanCanvas {
         return dayOfWeek === PlanCanvas.closingDayOfWeek;
     }
     
+    static isHoliday(date, holidays) {
+        
+        if (!holidays) return false;
+
+        const month_and_day = date.substring(0, date.length - 3).split('/');
+
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = month_and_day[0];
+        const day = month_and_day[1];
+
+        const index = holidays.findIndex(holiday => {
+            
+            return holiday.year == year && holiday.month == month && holiday.day == day;
+        });
+        
+        return index != -1;
+    }
+    
+    isHoliday(date) {
+        
+        return PlanCanvas.isHoliday(date, holidaysCache);
+    }
+    
     get dateStackNode() {
         
         const maker = new NodeMaker('div', ['canvas-stack', 'canvas-date-stack']);
@@ -61,6 +85,11 @@ class PlanCanvas {
             if (this.isClosingDayOfWeek(dayOfWeek)) {
                 
                 classNames.push('closing-day');
+            }
+            
+            if (this.isHoliday(state.date)) {
+                
+                classNames.push('holiday');
             }
 
             maker.appendText(state.date, 'div', classNames);
@@ -97,13 +126,20 @@ class PlanCanvas {
                 state.availabilityKind,
                 dayOfWeek,
             ];
-            const attributes = {};
+            const attributes = {
+                'data-date' : state.date,
+            };
 
             if (this.isClosingDayOfWeek(dayOfWeek)) {
                 
                 classNames.push('closing-day');
             }
             
+            if (this.isHoliday(state.date)) {
+                
+                classNames.push('holiday');
+            }
+
             if (state.availabilityKind === State.valid) {
 
                 classNames.push('canvas-selectable');

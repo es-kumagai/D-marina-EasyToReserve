@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "holidaysinjapan",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/es-kumagai/HolidaysInJapan.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "142a7fa8d469ff5e7a5ccdd1890340826608a94b"
+      }
+    }
+  ],
+  "version" : 2
+}

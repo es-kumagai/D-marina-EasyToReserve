@@ -119,6 +119,11 @@ div.canvas div.canvas-stack > .closing-day {
     background-color: #e7e7eb;
 }
 
+div.canvas div.canvas-stack > .holiday {
+    
+    background-color: #fdeff2;
+}
+
 div.canvas div.canvas-stack > .sunday {
     
     background-color: #fdeff2;

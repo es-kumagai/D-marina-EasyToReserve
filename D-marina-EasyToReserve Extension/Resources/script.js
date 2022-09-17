@@ -1,5 +1,8 @@
+var holidaysCache = null;
+
 document.addEventListener('DOMContentLoaded', function(event) {
     
+    prepare();
     removeCanvas();
 });
 
@@ -58,6 +61,15 @@ document.addEventListener('CANVAS_DID_REMOVE', (event) => {
     resizeMainNode();
 });
 
+document.addEventListener('HOLIDAYS_DID_RECEIVE', event => {
+    
+    applyHolidays(holidaysCache);
+});
+
+document.addEventListener('HOLIDAYS_DID_APPLY', event => {
+   
+});
+
 window.addEventListener('resize', (event) => {
 
     resizeMainNode();
@@ -69,8 +81,77 @@ safari.self.addEventListener('message', (event) => {
             
         case 'request-availability-of-all-reservations':
             receiveRequestAvailabilityOfAllReservationsMessage();
+            break;
+            
+        case 'holidays':
+            extractHolidays(event.message['holidays']);
+            break;
     }
 });
+
+function prepare() {
+    
+    safari.extension.dispatchMessage("prepare-holidays");
+}
+
+function requestHolidays() {
+    
+    safari.extension.dispatchMessage("request-holidays");
+}
+
+function extractHolidays(holidays_json) {
+    
+    const holidays_object = eval(`(${holidays_json})`);
+    const holidays = holidays_object.map(holiday_object => {
+        
+        const name = holiday_object['name'];
+        const year = holiday_object['date']['year'];
+        const month = holiday_object['date']['month'];
+        const day = holiday_object['date']['day'];
+        
+        return new Holiday(name, year, month, day);
+    });
+    
+    holidaysCache = holidays;
+    
+    dispatchEvent('HOLIDAYS_DID_RECEIVE');
+}
+
+function applyHolidays(holidays) {
+    
+    const dateNodes = getCanvasNode().getElementsByClassName('date');
+    const availabilityNodes = getCanvasNode().getElementsByClassName('availability');
+
+    function modifyClassList(node, date) {
+    
+        if (PlanCanvas.isHoliday(date, holidays)) {
+            
+            node.classList.add('holiday');
+        }
+        else {
+            
+            node.classList.remove('holiday');
+        }
+    }
+    
+    for (let i = 0; i != dateNodes.length; ++i) {
+        
+        const dateNode = dateNodes[i];
+        const date = dateNode.innerText;
+        
+        modifyClassList(dateNode, date);
+    }
+
+    for (let i = 0; i != availabilityNodes.length; ++i) {
+        
+        const availabilityNode = availabilityNodes[i];
+        const date = availabilityNode.getAttribute('data-date');
+        
+        modifyClassList(availabilityNode, date);
+    }
+
+    dispatchEvent('HOLIDAYS_DID_APPLY');
+}
 
 function resizeMainNode() {
     
@@ -158,6 +239,8 @@ function removeSpecifiedWidthFromCalendadrDaysNode() {
 }
 
 function receiveRequestAvailabilityOfAllReservationsMessage() {
+    
+    if (!holidaysCache) requestHolidays();
     
     const page = new Page();
     const date = page.selectedDate;
