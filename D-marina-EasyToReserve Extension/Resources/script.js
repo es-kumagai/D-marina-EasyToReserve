@@ -91,6 +91,20 @@ safari.self.addEventListener('message', (event) => {
 
 function prepare() {
     
+    const moveCalendarActionNode = document.createElement('input');
+    
+    const moveCalendarAction = [
+        `date = new Date(Number(this.value));`,
+        `getMaincalendar(date.getFullYear(), date.getMonth() + 1, date.getDate(), true);`,
+    ];
+    
+    moveCalendarActionNode.id = 'move_calendar_action';
+    moveCalendarActionNode.type = 'hidden';
+    moveCalendarActionNode.text = '';
+    moveCalendarActionNode.setAttribute('onclick', moveCalendarAction.join(' '));
+    
+    document.body.appendChild(moveCalendarActionNode);
+    
     safari.extension.dispatchMessage("prepare-holidays");
 }
 
@@ -316,4 +330,16 @@ function requestPlan(startDate, boat, course) {
         request.open('GET', endpoint.url, true);
         request.send(null);
     });
+}
+
+function dateFromMonthAndDayText(text) {
+    
+    const month_and_day = text.substring(0, text.length - 3).split('/');
+
+    const today = new Date();
+    const year = String(today.getFullYear());
+    const month = String(month_and_day[0]);
+    const day = String(month_and_day[1]);
+    
+    return new DateComponents(`${year}${month.padStart(2, '0')}${day.padStart(2, '0')}`);
 }

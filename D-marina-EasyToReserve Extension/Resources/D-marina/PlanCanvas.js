@@ -48,16 +48,11 @@ class PlanCanvas {
         
         if (!holidays) return false;
 
-        const month_and_day = date.substring(0, date.length - 3).split('/');
-
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = month_and_day[0];
-        const day = month_and_day[1];
+        const dateComponent = dateFromMonthAndDayText(date);
 
         const index = holidays.findIndex(holiday => {
             
-            return holiday.year == year && holiday.month == month && holiday.day == day;
+            return holiday.year == dateComponent.year && holiday.month == dateComponent.month && holiday.day == dateComponent.day;
         });
         
         return index != -1;
@@ -142,9 +137,23 @@ class PlanCanvas {
 
             if (state.availabilityKind === State.valid) {
 
+                const action = [
+                    `selectMainPlan(${this.boat.id});`,
+                    `selectSubPlan(${this.course.id});`,
+                    `timer = setInterval(() => {`,
+                        `loadingNode = document.getElementById('loading');`,
+                        `if (!loadingNode || loadingNode.style.display !== 'none') return;`,
+                        `document.dispatchEvent(new CustomEvent('MOVE_TO_CALENDAR'));`,
+                        `action = document.getElementById('move_calendar_action');`,
+                        `action.value = ${dateFromMonthAndDayText(state.date).time};`,
+                        `action.click();`,
+                        `clearInterval(timer);`,
+                    `}, 100)`,
+                ];
+                
                 classNames.push('canvas-selectable');
                 attributes['href'] = 'void(0)';
-                attributes['onclick'] = `selectMainPlan(${this.boat.id}); selectSubPlan(${this.course.id}); document.dispatchEvent(new CustomEvent('MOVE_TO_CALENDAR'));`;
+                attributes['onclick'] = action.join(' ');
             }
 
             maker.appendText(state.availability, 'div', classNames, attributes);

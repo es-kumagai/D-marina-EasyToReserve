@@ -74,10 +74,27 @@ class Canvas {
     
         const maker = new NodeMaker('button', ['calendar-move', 'nextWeek']);
 
+        const action = [
+            `action = document.getElementById('move_calendar_action');`,
+            `action.setAttribute('data-selected-date', ${date.text});`,
+            `action.value = ${date.time};`,
+            `action.click();`,
+            `e = new CustomEvent("UPDATE_AVAILABILITIES", { detail: { selectedDate : ${date.text}, baseDate : ${this.baseDate.text} } });`,
+            `document.dispatchEvent(e);`,
+        ];
+
         maker.appendText(label);
-        maker.setAttribute('onclick', `getMaincalendar(${date.year},${date.month},${date.day},true); e = new CustomEvent("UPDATE_AVAILABILITIES", { detail: { selectedDate : ${date.text}, baseDate : ${this.baseDate.text} } });  document.dispatchEvent(e);`);
-        
+        maker.setAttribute('onclick', action.join(' '));
+
         return maker.node;
+    }
+    
+    MOVE_CALENDAR(dateString) {
+
+        const date = new DateComponents(dateString);
+
+        alert(window.globalFunction);
+        getMaincalendar(date.year, date.month, date.day, true);
     }
 
     get calendarMovesNode() {

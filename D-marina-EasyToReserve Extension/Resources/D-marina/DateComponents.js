@@ -49,6 +49,12 @@ class DateComponents {
         return new DateComponents(date);
     }
     
+    get time() {
+        
+        const date = new Date(this.year, this.month - 1, this.day);
+        return date.getTime();
+    }
+    
     get nextWeek() {
         
         const date = new Date(this.year, this.month - 1, this.day);
