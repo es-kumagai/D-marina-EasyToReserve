@@ -216,6 +216,7 @@ div.canvas .availability-skip {
 div.canvas .availability-valid {
     
     color: #89c3eb;
+    cursor: pointer;
 }
 
 div.canvas .availability-invalid {
@@ -226,5 +227,18 @@ div.canvas .availability-invalid {
 div.canvas .calendar-buttons button {
     
     padding: 4pt 8pt;
+}
+
+div.canvas .calendar-buttons button:enabled {
+    
     cursor: pointer;
+}
+
+div.canvas .calendar-buttons button:disabled {
+    
+}
+
+div.canvas .calendar-buttons .separator {
+    
+    padding: 0pt 0pt 0pt 10pt;
 }

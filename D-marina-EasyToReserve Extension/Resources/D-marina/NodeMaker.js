@@ -50,6 +50,16 @@ class NodeMaker {
         }
     }
 
+    setEnable() {
+    
+        this.root.disabled = false;
+    }
+
+    setDisable() {
+    
+        this.root.disabled = true;
+    }
+
     appendClassName(className) {
     
         this.root.classList.add(className);

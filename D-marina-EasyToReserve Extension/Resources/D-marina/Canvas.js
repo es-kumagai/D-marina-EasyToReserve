@@ -74,6 +74,7 @@ class Canvas {
     
         const maker = new NodeMaker('button', ['calendar-move', 'nextWeek']);
 
+        const isPriorToBaseDate = date.time < this.baseDate.time;
         const action = [
             `action = document.getElementById('move_calendar_action');`,
             `action.setAttribute('data-selected-date', ${date.text});`,
@@ -82,9 +83,14 @@ class Canvas {
             `e = new CustomEvent("UPDATE_AVAILABILITIES", { detail: { selectedDate : ${date.text}, baseDate : ${this.baseDate.text} } });`,
             `document.dispatchEvent(e);`,
         ];
-
+        
         maker.appendText(label);
         maker.setAttribute('onclick', action.join(' '));
+        
+        if (isPriorToBaseDate) {
+            
+            maker.setDisable();
+        }
 
         return maker.node;
     }
@@ -100,14 +106,27 @@ class Canvas {
     get calendarMovesNode() {
         
         const maker = new NodeMaker('span', 'calendar-buttons');
-        
+                
         maker.appendNode(this.calendarMoveBaseDateNode);
-        maker.appendNode(this.calendarMoveNextWeekNode);
+
+        maker.appendNode(this.makeSeparator());
+
+        maker.appendNode(this.calendarMovePreviousMonthNode);
         maker.appendNode(this.calendarMoveNextMonthNode);
-        
+
+        maker.appendNode(this.makeSeparator());
+
+        maker.appendNode(this.calendarMovePreviousWeekNode);
+        maker.appendNode(this.calendarMoveNextWeekNode);
+
         return maker.node;
     }
     
+    makeSeparator() {
+
+        return new NodeMaker('span', 'separator').node;
+    }
+
     get calendarMoveBaseDateNode() {
     
         return this.calendarMoveNodeTo(this.baseDate, '直近の状況');
@@ -115,22 +134,22 @@ class Canvas {
 
     get calendarMoveNextWeekNode() {
     
-        return this.calendarMoveNodeTo(this.startDate.nextWeek, '翌週');
+        return this.calendarMoveNodeTo(this.startDate.nextWeek, '翌週 ＞');
     }
     
     get calendarMovePreviousWeekNode() {
     
-        return this.calendarMoveNodeTo(this.startDate.previousWeek, '前週');
+        return this.calendarMoveNodeTo(this.startDate.previousWeek, '＜ 前週');
     }
     
     get calendarMoveNextMonthNode() {
     
-        return this.calendarMoveNodeTo(this.startDate.nextMonth, '翌月');
+        return this.calendarMoveNodeTo(this.startDate.nextMonth, '翌月 ≫');
     }
     
     get calendarMovePreviousMonthNode() {
     
-        return this.calendarMoveNodeTo(this.startDate.previousMonth, '前月');
+        return this.calendarMoveNodeTo(this.startDate.previousMonth, '≪ 前月');
     }
     
     get courseSectionNodes() {
