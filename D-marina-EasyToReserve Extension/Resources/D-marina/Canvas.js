@@ -1,6 +1,6 @@
 class Canvas {
 
-    constructor(page, startDate, baseDate) {
+    constructor(page, startDate, baseDate, nodeWidth = null) {
 
         const maker = new NodeMaker('div', 'canvas', Canvas.id);
         const node = maker.node;
@@ -10,9 +10,21 @@ class Canvas {
         this.baseDate = baseDate;
         this.node = node;
 
+        if (nodeWidth) this.width = nodeWidth;
+        
         this.rootNode.insertBefore(node, this.mainNode);
     }
 
+    get width() {
+
+        return window.getComputedStyle(this.node).getPropertyValue('width') || this.node.style.width;
+    }
+    
+    set width(value) {
+        
+        this.node.style.minWidth = value;
+    }
+    
     get rootNode() {
     
         return getRootNode();
@@ -33,7 +45,7 @@ class Canvas {
         return getNavigatorNode();
     }
     
-    makeNavigatorNode() {
+    makeNavigatorNode(width = null) {
     
         const existingNavigatorNode = this.navigatorNode;
         
@@ -50,7 +62,13 @@ class Canvas {
         
         maker.appendNode(buttonsMaker.node);
 
-        this.mainNode.appendChild(maker.node);
+        const navigatorNode = maker.node;
+        
+        if (width) {
+            navigatorNode.style.width = width;
+        }
+        
+        this.mainNode.appendChild(navigatorNode);
     }
     
     makeCourseNode(course, appendingNode) {

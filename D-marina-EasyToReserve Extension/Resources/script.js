@@ -1,9 +1,12 @@
 var holidaysCache = null;
+var activeCanvasNodeWidth = null;
+
+var updatingProcessSerialNumber = 0;
 
 document.addEventListener('DOMContentLoaded', function(event) {
     
     prepare();
-    removeCanvas();
+    removeCanvas(false);
 });
 
 document.addEventListener('UPDATE_AVAILABILITIES', (event) => {
@@ -16,7 +19,7 @@ document.addEventListener('UPDATE_AVAILABILITIES', (event) => {
 
 document.addEventListener('HIDE_CANVAS', (event) => {
 
-    removeCanvas();
+    removeCanvas(false);
 });
 
 document.addEventListener('MOVE_TO_CALENDAR', (event) => {
@@ -53,6 +56,10 @@ document.addEventListener('CANVAS_PLAN_DID_UPDATE', (event) => {
 });
 
 document.addEventListener('CANVAS_ALL_PLANS_DID_UPDATE', (event) => {
+
+});
+
+document.addEventListener('CANVAS_ALL_PLANS_UPDATE_CANCELLED', (event) => {
 
 });
 
@@ -167,19 +174,26 @@ function applyHolidays(holidays) {
     dispatchEvent('HOLIDAYS_DID_APPLY');
 }
 
-function resizeMainNode() {
+function getCanvasWidth() {
     
     const canvasNode = getCanvasNode();
     let canvasWidth = '0px';
     
     if (canvasNode) {
-
-        const styles = window.getComputedStyle(canvasNode);
-        const marginLeft = styles.getPropertyValue('margin-left');
-        const marginRight = styles.getPropertyValue('margin-right');
+        
+        const style = window.getComputedStyle(canvasNode);
+        const marginLeft = style.getPropertyValue('margin-left');
+        const marginRight = style.getPropertyValue('margin-right');
         
         canvasWidth = `${canvasNode.offsetWidth}px + ${marginLeft} + ${marginRight}`;
     }
+    
+    return canvasWidth;
+}
+
+function resizeMainNode() {
+    
+    let canvasWidth = getCanvasWidth();
 
     const rootNode = getRootNode();
     const mainNode = getMainNode();
@@ -231,7 +245,7 @@ function dispatchEvent(name, detail = undefined) {
     document.dispatchEvent(event);
 }
 
-function removeCanvas() {
+function removeCanvas(keepingActiveCanvasWidth = false) {
 
     const canvasNode = getCanvasNode();
     
@@ -240,6 +254,8 @@ function removeCanvas() {
         canvasNode.remove();
         dispatchEvent('CANVAS_DID_REMOVE');
     }
+    
+    if (!keepingActiveCanvasWidth) activeCanvasNodeWidth = null;
 }
 
 function removeSpecifiedWidthFromCalendadrDaysNode() {
@@ -262,52 +278,79 @@ function receiveRequestAvailabilityOfAllReservationsMessage() {
     updateAvailabilities(date, date);
 }
 
-async function updateAvailabilities(startDate, baseDate) {
-
-    const page = new Page();
-
-    if (!startDate) {
+function validateUpdatingSerialNumber(serialNumber) {
     
-        alert('Start date is not selected.');
-        return;
-    }
-    
-    removeCanvas();
-    removeSpecifiedWidthFromCalendadrDaysNode();
-    
-    const canvas = new Canvas(page, startDate, baseDate);
-    let updatingFirstPlan = true;
+    if (serialNumber < updatingProcessSerialNumber) throw new Error('Updating serial number is invalid.');
+}
 
-    canvas.makeNavigatorNode();
-    
-    for (const course of page.courses) {
+async function updateAvailabilities(startDate, baseDate, serialNumber) {
 
-        canvas.makeCourseNode(course, canvas.calendarMovesNode);
+    const currentSerialNumber = ++updatingProcessSerialNumber;
+
+    console.info(`Start updating availabilities in serial number: ${currentSerialNumber}.`);
+    
+    try {
         
-        for (const boat of page.boats) {
-
-            const response = await requestPlan(startDate, boat, course);
+        const page = new Page();
+        
+        if (!startDate) {
             
-            canvas.appendPlanCanvas(new PlanCanvas(canvas, response));
-
-            if (updatingFirstPlan) {
+            throw new Error('Start date is not selected.');
+        }
+        
+        removeCanvas(true);
+        removeSpecifiedWidthFromCalendadrDaysNode();
+        
+        const canvas = new Canvas(page, startDate, baseDate, activeCanvasNodeWidth);
+        let updatingFirstPlan = true;
+        
+        canvas.makeNavigatorNode();
+        
+        for (const course of page.courses) {
             
-                dispatchEvent('CANVAS_AVAILABILITY_IN_FIRST_PLAN_DID_UPDATE');
+            canvas.makeCourseNode(course, canvas.calendarMovesNode);
+            
+            for (const boat of page.boats) {
+                
+                validateUpdatingSerialNumber(currentSerialNumber);
+                
+                const response = await requestPlan(startDate, boat, course);
+                
+                validateUpdatingSerialNumber(currentSerialNumber);
+                
+                canvas.appendPlanCanvas(new PlanCanvas(canvas, response));
+                
+                activeCanvasNodeWidth = canvas.width;
+                
+                if (updatingFirstPlan) {
+                    
+                    dispatchEvent('CANVAS_AVAILABILITY_IN_FIRST_PLAN_DID_UPDATE');
+                }
+                
+                dispatchEvent('CANVAS_AVAILABILITY_DID_UPDATE');
             }
             
-            dispatchEvent('CANVAS_AVAILABILITY_DID_UPDATE');
-        }
+            if (updatingFirstPlan) {
+                
+                dispatchEvent('CANVAS_FIRST_PLAN_DID_UPDATE');
+               updatingFirstPlan = false;
 
-        if (updatingFirstPlan) {
-        
-            dispatchEvent('CANVAS_FIRST_PLAN_DID_UPDATE');
-            updatingFirstPlan = false;
+                console.info(`The first plan did update in updating serial = ${currentSerialNumber}.`);
+            }
+            
+            activeCanvasNodeWidth = canvas.width;
+            
+            console.info(`A plan did update in updating serial = ${currentSerialNumber}.`);
+            dispatchEvent('CANVAS_PLAN_DID_UPDATE');
         }
         
-        dispatchEvent('CANVAS_PLAN_DID_UPDATE');
+        console.info(`All plans did update in updating serial = ${currentSerialNumber}.`);
+        dispatchEvent('CANVAS_ALL_PLANS_DID_UPDATE');
+    } catch (e) {
+        
+        console.warn(`Updating has been canceled in updating serial = ${currentSerialNumber}: ${e.message}`);
+        dispatchEvent('CANVAS_ALL_PLANS_UPDATE_CANCELLED');
     }
-
-    dispatchEvent('CANVAS_ALL_PLANS_DID_UPDATE');
 }
 
 function requestPlan(startDate, boat, course) {
